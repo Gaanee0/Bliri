@@ -11,7 +11,7 @@ set -ouex pipefail
 
 # this installs a package from fedora repos
 dnf5 install -y tmux 
-dnf5 install -y zellij
+#dnf5 install -y zellij
 dnf5 install -y helix
 
 # Use a COPR Example:
