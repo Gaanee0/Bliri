@@ -13,9 +13,12 @@ export GNUPGHOME=/tmp/gnupg
 mkdir -p "$GNUPGHOME"
 chmod 700 "$GNUPGHOME"
 
-log "Removing conflicting /opt/zen if it exists..."
-rm -rf /opt/zen
-mkdir -p /opt
+log "Working around /opt symlink issue for zen-browser..."
+if [ ! -d /opt ]; then
+  rm -f /opt
+  mkdir -p /usr/local/opt
+  ln -s /usr/local/opt /opt
+fi
 
 log "Enable COPR repos...." 
 COPR_REPOS=(
@@ -45,5 +48,5 @@ log "Cleaning up temporary GPG directory..."
 rm -rf "$GNUPGHOME"
 unset GNUPGHOME
 
-log "Enabling systems.services..."
+log "Enabling systemd.services..."
 systemctl enable podman.socket
