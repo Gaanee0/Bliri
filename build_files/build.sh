@@ -2,34 +2,33 @@
 
 set -ouex pipefail
 
-### Install packages
+RELEASE="$(rpm -E %fedora)"
 
-#log "Enable Copr repos..."
-#COPR_REPOS=(
-#    sneexy/zen-browser
-#    varlad/zellij  
-#)
-#for repo in "${COPR_REPOS[@]}"; do
-#  dnf5 -y copr enable "$repo"
-#done
+log() {
+  echo "=== $* ==="
+}
 
-# Packages can be installed from any enabled yum repo on the image.
-# RPMfusion repos are available by default in ublue main images
-# List of rpmfusion packages can be found here:
-# https://mirrors.rpmfusion.org/mirrorlist?path=free/fedora/updates/39/x86_64/repoview/index.html&protocol=https&redirect=1
+log "Enable COPR repos...." 
+COPR_REPOS=(
+     sneexy/zen-browser
+)
+for repo in "${COPR_REPOS[@]}"; do
+  dnf5 -y copr enable "$repo"
+done
 
-# this installs a package from fedora repos
-dnf5 install -y helix
-#dnf5 install -y zellij
-#dnf5 install -y helix
+ADDITIONAL_SYSTEM_APPS=(
+     zen-browser
+     helix
+     zellij
+) 
 
-# Use a COPR Example:
-#
-# dnf5 -y copr enable ublue-os/staging
-# dnf5 -y install package
-# Disable COPRs so they don't end up enabled on the final image:
-# dnf5 -y copr disable ublue-os/staging
+log "Installing packages using dnf5..."
+dnf5 install --setopt=install_weak_deps=True -y \
+${ADDITIONAL_SYSTEM_APPS[@]}
 
-#### Example for enabling a System Unit File
+log "Disable Copr repos to get rid of clutter..."
+for repo in "${COPR_REPOS[@]}"; do
+  dnf5 -y copr disable "$repo"
+done
 
 systemctl enable podman.socket
