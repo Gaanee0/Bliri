@@ -13,6 +13,9 @@ export GNUPGHOME=/tmp/gnupg
 mkdir -p "$GNUPGHOME"
 chmod 700 "$GNUPGHOME"
 
+log "Removing conflicting /opt/zen if it exists..."
+rm -rf /opt/zen
+
 log "Enable COPR repos...." 
 COPR_REPOS=(
      sneexy/zen-browser
