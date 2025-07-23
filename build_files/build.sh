@@ -4,6 +4,15 @@ set -ouex pipefail
 
 ### Install packages
 
+log "Enable Copr repos..."
+COPR_REPOS=(
+    sneexy/zen-browser
+    varlad/zellij  
+)
+for repo in "${COPR_REPOS[@]}"; do
+  dnf5 -y copr enable "$repo"
+done
+
 # Packages can be installed from any enabled yum repo on the image.
 # RPMfusion repos are available by default in ublue main images
 # List of rpmfusion packages can be found here:
