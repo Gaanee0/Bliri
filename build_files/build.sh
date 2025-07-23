@@ -15,6 +15,7 @@ chmod 700 "$GNUPGHOME"
 
 log "Removing conflicting /opt/zen if it exists..."
 rm -rf /opt/zen
+mkdir -p /opt
 
 log "Enable COPR repos...." 
 COPR_REPOS=(
