@@ -8,6 +8,11 @@ log() {
   echo "=== $* ==="
 }
 
+log "Creating temporary GPG directory..."
+export GNUPGHOME=/tmp/gnupg
+mkdir -p "$GNUPGHOME"
+chmod 700 "$GNUPGHOME"
+
 log "Enable COPR repos...." 
 COPR_REPOS=(
      sneexy/zen-browser
@@ -31,4 +36,9 @@ for repo in "${COPR_REPOS[@]}"; do
   dnf5 -y copr disable "$repo"
 done
 
+log "Cleaning up temporary GPG directory..."
+rm -rf "$GNUPGHOME"
+unset GNUPGHOME
+
+log "Enabling systems.services..."
 systemctl enable podman.socket
