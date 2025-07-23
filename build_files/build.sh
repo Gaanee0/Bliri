@@ -15,17 +15,14 @@ chmod 700 "$GNUPGHOME"
 
 log "Enable COPR repos...." 
 COPR_REPOS=(
-     sneexy/zen-browser
-     varlad/zellij 
+     
 )
 for repo in "${COPR_REPOS[@]}"; do
   dnf5 -y copr enable "$repo"
 done
 
 ADDITIONAL_SYSTEM_APPS=(
-     zen-browser
-     helix
-     zellij
+     wpaperd
 ) 
 
 log "Installing packages using dnf5..."
