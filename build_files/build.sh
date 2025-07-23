@@ -13,13 +13,6 @@ export GNUPGHOME=/tmp/gnupg
 mkdir -p "$GNUPGHOME"
 chmod 700 "$GNUPGHOME"
 
-log "Working around /opt symlink issue for zen-browser..."
-if [ ! -d /opt ]; then
-  rm -f /opt
-  mkdir -p /usr/local/opt
-  ln -s /usr/local/opt /opt
-fi
-
 log "Enable COPR repos...." 
 COPR_REPOS=(
      sneexy/zen-browser
