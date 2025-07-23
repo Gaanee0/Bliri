@@ -16,6 +16,7 @@ chmod 700 "$GNUPGHOME"
 log "Enable COPR repos...." 
 COPR_REPOS=(
      sneexy/zen-browser
+     varlad/zellij 
 )
 for repo in "${COPR_REPOS[@]}"; do
   dnf5 -y copr enable "$repo"
