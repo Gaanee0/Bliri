@@ -10,7 +10,7 @@ log() {
 
 log "Enable COPR repos...." 
 COPR_REPOS=(
-     
+    ublue-os/terra
 )
 for repo in "${COPR_REPOS[@]}"; do
   dnf5 -y copr enable "$repo"
