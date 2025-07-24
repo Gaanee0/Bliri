@@ -8,6 +8,9 @@ log() {
   echo "=== $* ==="
 }
 
+log "Adding Terra repo..."
+curl -fsSL https://github.com/terrapkg/subatomic-repos/raw/main/terra.repo | pkexec tee > /etc/yum.repos.d/terra.repo
+
 log "Enable COPR repos...." 
 COPR_REPOS=(
      
@@ -18,6 +21,7 @@ done
 
 ADDITIONAL_SYSTEM_APPS=(
      wpaperd
+     syncthing
 ) 
 
 log "Installing packages using dnf5..."
