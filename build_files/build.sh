@@ -8,10 +8,10 @@ log() {
   echo "=== $* ==="
 }
 
-log "Adding Terra repo for build-time layering..."
-curl -fsSL https://github.com/terrapkg/subatomic-repos/raw/main/terra.repo -o /etc/yum.repos.d/terra.repo
-rpm --import https://github.com/terrapkg/subatomic-repos/raw/main/RPM-GPG-KEY-terra
-
+# Add Terra repo via dnf
+dnf5 config-manager --add-repo https://github.com/terrapkg/subatomic-repos/raw/main/terra.repo
+# Install terra-release (which registers the repo) and wpaperd
+dnf5 install --nogpgcheck -y terra-release wpaperd
 
 log "Enable COPR repos...." 
 COPR_REPOS=(
@@ -22,8 +22,7 @@ for repo in "${COPR_REPOS[@]}"; do
 done
 
 ADDITIONAL_SYSTEM_APPS=(
-     syncthing
-     wpaperd
+     
 ) 
 
 log "Installing packages using dnf5..."
