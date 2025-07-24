@@ -8,21 +8,21 @@ log() {
   echo "=== $* ==="
 }
 
-# Add Terra repo via dnf
-dnf5 config-manager --add-repo https://github.com/terrapkg/subatomic-repos/raw/main/terra.repo
-# Install terra-release (which registers the repo) and wpaperd
-dnf5 install --nogpgcheck -y terra-release wpaperd
+log "Add Terra repository..."
+dnf5 -y install --nogpgcheck --repofrompath "terra,https://repos.fyralabs.com/terra${RELEASE}" terra-release
+dnf5 -y install terra-release-extras || true
+dnf5 config-manager setopt "terra*".enabled=0
 
 log "Enable COPR repos...." 
 COPR_REPOS=(
-     
+    yalter/niri
 )
 for repo in "${COPR_REPOS[@]}"; do
   dnf5 -y copr enable "$repo"
 done
 
 ADDITIONAL_SYSTEM_APPS=(
-     
+     wpaperd
 ) 
 
 log "Installing packages using dnf5..."
