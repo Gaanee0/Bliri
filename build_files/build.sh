@@ -30,6 +30,7 @@ ADDITIONAL_APPS=(
     kde-connect
     btrfs-assistant
     obs-studio
+    kio-admin
 )
 
 NIRI_PKGS=(
