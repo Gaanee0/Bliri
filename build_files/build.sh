@@ -56,10 +56,25 @@ NIRI_PKGS=(
     network-manager-applet
 )
 
+FONT_OTHERS=(
+    material-icons-fonts
+    fira-code-fonts
+    fontawesome-fonts-all
+    google-noto-emoji-fonts
+    adobe-source-code-pro-fonts
+    google-droid-sans-fonts
+    google-noto-sans-cjk-fonts
+    google-noto-color-emoji-fonts
+    jetbrains-mono-fonts
+    wine-ms-sans-serif-fonts
+    la-capitaine-cursor-theme 
+)
+
 log "Installing packages using dnf5..."
 dnf5 install --setopt=install_weak_deps=True -y \
 ${ADDITIONAL_APPS[@]} \
-${NIRI_PKGS[@]}
+${NIRI_PKGS[@]} \
+${FONT_OTHERS[@]}
 
 log "Disable Copr repos to get rid of clutter..."
 for repo in "${COPR_REPOS[@]}"; do
