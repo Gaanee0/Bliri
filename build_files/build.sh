@@ -29,6 +29,7 @@ ADDITIONAL_APPS=(
     filelight
     kde-connect
     btrfs-assistant
+    obs-studio
 )
 
 NIRI_PKGS=(
