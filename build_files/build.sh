@@ -32,6 +32,7 @@ ADDITIONAL_APPS=(
     obs-studio
     kio-admin
     udisks2
+    kwallet
 )
 
 NIRI_PKGS=(
