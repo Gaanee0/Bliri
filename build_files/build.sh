@@ -31,8 +31,6 @@ ADDITIONAL_APPS=(
     btrfs-assistant
     obs-studio
     kio-admin
-    udisks2
-    kwallet
 )
 
 NIRI_PKGS=(
