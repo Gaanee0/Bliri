@@ -33,6 +33,11 @@ ADDITIONAL_APPS=(
     kio-admin
 )
 
+PODMAN_PKGS=(
+  dialog
+  freerdp
+)
+
 NIRI_PKGS=(
     niri
     wpaperd
@@ -77,7 +82,8 @@ log "Installing packages using dnf5..."
 dnf5 install --setopt=install_weak_deps=True -y \
 ${ADDITIONAL_APPS[@]} \
 ${NIRI_PKGS[@]} \
-${FONT_OTHERS[@]}
+${FONT_OTHERS[@]} \
+${PODMAN_PKGS[@]}
 
 log "Disable Copr repos to get rid of clutter..."
 for repo in "${COPR_REPOS[@]}"; do
