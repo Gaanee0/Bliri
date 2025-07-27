@@ -38,6 +38,7 @@ NIRI_PKGS=(
     wpaperd
     swaylock
     swayidle
+    swaybg
     brightnessctl
     fuzzel
     mako
