@@ -58,7 +58,7 @@ NIRI_PKGS=(
     wlogout
     wl-copy
     network-manager-applet
-    pulseaudio
+    pavucontrol
 )
 
 FONT_OTHERS=(
