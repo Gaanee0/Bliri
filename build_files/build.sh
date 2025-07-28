@@ -36,6 +36,7 @@ ADDITIONAL_APPS=(
 PODMAN_PKGS=(
   dialog
   freerdp
+  yad
 )
 
 NIRI_PKGS=(
