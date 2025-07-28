@@ -8,7 +8,7 @@ log() {
   echo "=== $* ==="
 }
 
-log "Enable COPR repos...." 
+log "Enable COPR repos...."
 COPR_REPOS=(
     tofik/sway
     ulysg/xwayland-satellite
@@ -24,19 +24,15 @@ dnf5 config-manager setopt terra.enabled=1 terra-extras.enabled=1
 
 ADDITIONAL_APPS=(
     kitty
-    kitty-terminfo
     dolphin
     filelight
     kde-connect
-    btrfs-assistant
-    obs-studio
     kio-admin
 )
 
 PODMAN_PKGS=(
   dialog
   freerdp
-  yad
 )
 
 NIRI_PKGS=(
@@ -60,9 +56,9 @@ NIRI_PKGS=(
     blueman
     wl-clip-persist
     wlogout
-    wireplumber
     wl-copy
     network-manager-applet
+    pulseaudio
 )
 
 FONT_OTHERS=(
@@ -76,7 +72,7 @@ FONT_OTHERS=(
     google-noto-color-emoji-fonts
     jetbrains-mono-fonts
     wine-ms-sans-serif-fonts
-    la-capitaine-cursor-theme 
+    la-capitaine-cursor-theme
 )
 
 log "Installing packages using dnf5..."
