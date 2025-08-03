@@ -28,6 +28,7 @@ ADDITIONAL_APPS=(
     filelight
     kde-connect
     kio-admin
+    testdisk
 )
 
 PODMAN_PKGS=(
@@ -59,6 +60,8 @@ NIRI_PKGS=(
     wl-copy
     network-manager-applet
     pavucontrol
+    qt6ct
+    kvantum
 )
 
 FONT_OTHERS=(
