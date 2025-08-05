@@ -14,6 +14,7 @@ COPR_REPOS=(
     ulysg/xwayland-satellite
     yalter/niri
     leloubil/wl-clip-persist
+    isaksamsten/niriswitcher
 )
 for repo in "${COPR_REPOS[@]}"; do
   dnf5 -y copr enable "$repo"
@@ -62,6 +63,7 @@ NIRI_PKGS=(
     pavucontrol
     qt6ct
     kvantum
+    niriswitcher
 )
 
 FONT_OTHERS=(
