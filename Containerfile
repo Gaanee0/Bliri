@@ -3,7 +3,7 @@ FROM scratch AS ctx
 COPY build_files /
 
 # Base Image
-FROM ghcr.io/ublue-os/auora-dx-nvidia:latest
+FROM ghcr.io/ublue-os/bluefin-dx-nvidia:latest
 
 ## Other possible base images include:
 # FROM ghcr.io/ublue-os/bazzite:latest
