@@ -15,6 +15,8 @@ COPR_REPOS=(
     yalter/niri
     leloubil/wl-clip-persist
     isaksamsten/niriswitcher
+    errornointernet/quickshell
+    heus-sueh/packages
 )
 for repo in "${COPR_REPOS[@]}"; do
   dnf5 -y copr enable "$repo"
@@ -64,8 +66,26 @@ NIRI_PKGS=(
     network-manager-applet
     pavucontrol
     qt6ct
+    qt5ct
     kvantum
     niriswitcher
+)
+
+QUICK_SHELL=(
+    quickshell-git
+    qt5-qtsvg
+    qt6-qtsvg
+    qt5-qtimageformats
+    qt6-qtimageformats
+    qt5-qtmultimedia
+    qt6-qtmultimedia
+    qt6-qt5compat
+    matugen
+    sassc
+    libass
+    plasma-breeze
+    breze-gtk
+    cava
 )
 
 FONT_OTHERS=(
