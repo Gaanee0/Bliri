@@ -107,7 +107,8 @@ dnf5 install --setopt=install_weak_deps=True -y \
 ${ADDITIONAL_APPS[@]} \
 ${NIRI_PKGS[@]} \
 ${FONT_OTHERS[@]} \
-${PODMAN_PKGS[@]}
+${PODMAN_PKGS[@]} \
+${QUICK_SHELL[@]}
 
 log "Disable Copr repos to get rid of clutter..."
 for repo in "${COPR_REPOS[@]}"; do
