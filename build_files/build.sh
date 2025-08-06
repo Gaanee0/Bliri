@@ -30,6 +30,8 @@ ADDITIONAL_APPS=(
     kde-connect
     kio-admin
     testdisk
+    fwupd
+    fwupd-efi
 )
 
 PODMAN_PKGS=(
