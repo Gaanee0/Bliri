@@ -84,7 +84,7 @@ QUICK_SHELL=(
     sassc
     libass
     plasma-breeze
-    breze-gtk
+    breeze-gtk
     cava
 )
 
