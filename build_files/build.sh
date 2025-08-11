@@ -14,7 +14,6 @@ COPR_REPOS=(
     ulysg/xwayland-satellite
     yalter/niri
     leloubil/wl-clip-persist
-    isaksamsten/niriswitcher
     errornointernet/quickshell
     heus-sueh/packages
 )
@@ -34,6 +33,11 @@ ADDITIONAL_APPS=(
     testdisk
     fwupd
     fwupd-efi
+    gnome-firmware
+    kde-partitionmanager
+    syncthing
+    helix
+    zellij
 )
 
 PODMAN_PKGS=(
@@ -68,7 +72,6 @@ NIRI_PKGS=(
     qt6ct
     qt5ct
     kvantum
-    niriswitcher
 )
 
 QUICK_SHELL=(
@@ -102,6 +105,16 @@ FONT_OTHERS=(
     la-capitaine-cursor-theme
 )
 
+REMOVE_PKGS=(
+    alacritty
+    mako
+    waybar
+    swaylock
+    blueman-applet
+    wpaperd
+    network-manager-applet
+)
+
 log "Installing packages using dnf5..."
 dnf5 install --setopt=install_weak_deps=True -y \
 ${ADDITIONAL_APPS[@]} \
@@ -109,6 +122,10 @@ ${NIRI_PKGS[@]} \
 ${FONT_OTHERS[@]} \
 ${PODMAN_PKGS[@]} \
 ${QUICK_SHELL[@]}
+
+log "Removing packages from dependcies"
+dnf5 remove -y \
+${REMOVE_PKGS[@]}
 
 log "Disable Copr repos to get rid of clutter..."
 for repo in "${COPR_REPOS[@]}"; do
