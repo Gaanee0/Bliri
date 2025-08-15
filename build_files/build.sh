@@ -38,6 +38,7 @@ ADDITIONAL_APPS=(
     syncthing
     helix
     zellij
+    dislocker
 )
 
 PODMAN_PKGS=(
