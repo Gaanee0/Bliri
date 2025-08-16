@@ -16,7 +16,6 @@ COPR_REPOS=(
     leloubil/wl-clip-persist
     errornointernet/quickshell
     heus-sueh/packages
-    doncesar12345/libfprint-elanmoc2 
 )
 for repo in "${COPR_REPOS[@]}"; do
   dnf5 -y copr enable "$repo"
@@ -109,7 +108,7 @@ FONT_OTHERS=(
 
 FINGER_PRINT=(
      fprintd
-     libfprint-elanmoc2
+     libfprint
 )
 
 REMOVE_PKGS=(
@@ -122,8 +121,6 @@ REMOVE_PKGS=(
     network-manager-applet
 )
 
-log "removing libfprint" 
-dnf5 remove -y libfprint
 
 log "Installing packages using dnf5..."
 dnf5 install --setopt=install_weak_deps=True -y \
