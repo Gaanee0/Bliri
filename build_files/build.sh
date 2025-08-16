@@ -123,6 +123,14 @@ REMOVE_PKGS=(
     network-manager-applet
 )
 
+BEFORE_INSTALL=(
+    libfprint
+)
+
+log 'removing packages for conflicts..."
+dnf5 remove -y \
+${BEFORE_INSTALL[@]}
+
 log "Installing packages using dnf5..."
 dnf5 install --setopt=install_weak_deps=True -y \
 ${ADDITIONAL_APPS[@]} \
