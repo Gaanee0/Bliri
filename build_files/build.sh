@@ -109,7 +109,6 @@ FONT_OTHERS=(
 
 FINGER_PRINT=(
      fprintd
-     libfprint-devel
      libfprint-elanmoc2
 )
 
@@ -123,14 +122,6 @@ REMOVE_PKGS=(
     network-manager-applet
 )
 
-BEFORE_INSTALL=(
-    libfprint
-)
-
-log "removing packages for conflicts..."
-dnf5 remove -y \
-${BEFORE_INSTALL[@]}
-
 log "Installing packages using dnf5..."
 dnf5 install --setopt=install_weak_deps=True -y \
 ${ADDITIONAL_APPS[@]} \
@@ -139,6 +130,7 @@ ${FONT_OTHERS[@]} \
 ${PODMAN_PKGS[@]} \
 ${QUICK_SHELL[@]} \
 ${FINGER_PRINT[@]} 
+--allowerasing
 
 log "Removing packages from dependcies"
 dnf5 remove -y \
