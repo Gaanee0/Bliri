@@ -16,6 +16,7 @@ COPR_REPOS=(
     leloubil/wl-clip-persist
     errornointernet/quickshell
     heus-sueh/packages
+    doncesar12345/libfprint-elanmoc2 
 )
 for repo in "${COPR_REPOS[@]}"; do
   dnf5 -y copr enable "$repo"
@@ -106,6 +107,14 @@ FONT_OTHERS=(
     la-capitaine-cursor-theme
 )
 
+FINGER_PRINT=(
+     fprint
+     imagemagick
+     libfprint
+     libfprint-devel
+     libfprint-elanmoc2
+)
+
 REMOVE_PKGS=(
     alacritty
     mako
@@ -122,7 +131,8 @@ ${ADDITIONAL_APPS[@]} \
 ${NIRI_PKGS[@]} \
 ${FONT_OTHERS[@]} \
 ${PODMAN_PKGS[@]} \
-${QUICK_SHELL[@]}
+${QUICK_SHELL[@]} \
+${FINGER_PRINT[@]} 
 
 log "Removing packages from dependcies"
 dnf5 remove -y \
