@@ -108,9 +108,7 @@ FONT_OTHERS=(
 )
 
 FINGER_PRINT=(
-     fprint
-     imagemagick
-     libfprint
+     fprintd
      libfprint-devel
      libfprint-elanmoc2
 )
