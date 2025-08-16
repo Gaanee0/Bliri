@@ -122,6 +122,9 @@ REMOVE_PKGS=(
     network-manager-applet
 )
 
+log "removing libfprint" 
+dnf5 remove -y libfprint
+
 log "Installing packages using dnf5..."
 dnf5 install --setopt=install_weak_deps=True -y \
 ${ADDITIONAL_APPS[@]} \
@@ -130,7 +133,6 @@ ${FONT_OTHERS[@]} \
 ${PODMAN_PKGS[@]} \
 ${QUICK_SHELL[@]} \
 ${FINGER_PRINT[@]} 
---allowerasing
 
 log "Removing packages from dependcies"
 dnf5 remove -y \
