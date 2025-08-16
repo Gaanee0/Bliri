@@ -127,7 +127,7 @@ BEFORE_INSTALL=(
     libfprint
 )
 
-log 'removing packages for conflicts..."
+log "removing packages for conflicts..."
 dnf5 remove -y \
 ${BEFORE_INSTALL[@]}
 
