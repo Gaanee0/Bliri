@@ -117,7 +117,6 @@ REMOVE_PKGS=(
     mako
     waybar
     swaylock
-    blueman-applet
     wpaperd
     network-manager-applet
 )
