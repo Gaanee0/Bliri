@@ -17,8 +17,7 @@ COPR_REPOS=(
     errornointernet/quickshell
     heus-sueh/packages
     gaanee/libfprint-elanmoc2
-    wef/cliphist
-)
+    )
 for repo in "${COPR_REPOS[@]}"; do
   dnf5 -y copr enable "$repo"
 done
