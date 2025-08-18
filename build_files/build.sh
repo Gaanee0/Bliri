@@ -40,6 +40,7 @@ ADDITIONAL_APPS=(
     helix
     zellij
     dislocker
+    chezmoi
 )
 
 PODMAN_PKGS=(
@@ -120,6 +121,7 @@ REMOVE_PKGS=(
     swaylock
     wpaperd
     network-manager-applet
+    tmux
 )
 
 log "removing libfprint" 
