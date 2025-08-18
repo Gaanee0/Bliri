@@ -17,7 +17,7 @@ COPR_REPOS=(
     errornointernet/quickshell
     heus-sueh/packages
     gaanee/libfprint-elanmoc2
-    )
+)
 for repo in "${COPR_REPOS[@]}"; do
   dnf5 -y copr enable "$repo"
 done
@@ -94,6 +94,7 @@ QUICK_SHELL=(
     breeze-gtk
     cava
     rsms-inter-fonts
+    gnome-themes-extra
 )
 
 FONT_OTHERS=(
