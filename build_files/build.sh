@@ -17,6 +17,7 @@ COPR_REPOS=(
     errornointernet/quickshell
     heus-sueh/packages
     gaanee/libfprint-elanmoc2
+    wef/cliphist
 )
 for repo in "${COPR_REPOS[@]}"; do
   dnf5 -y copr enable "$repo"
@@ -80,6 +81,7 @@ NIRI_PKGS=(
 QUICK_SHELL=(
     quickshell-git
     qt5-qtsvg
+    gtk-murrine-engine
     qt6-qtsvg
     qt5-qtimageformats
     qt6-qtimageformats
@@ -92,6 +94,7 @@ QUICK_SHELL=(
     plasma-breeze
     breeze-gtk
     cava
+    rsms-inter-fonts
 )
 
 FONT_OTHERS=(
