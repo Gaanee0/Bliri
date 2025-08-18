@@ -110,6 +110,7 @@ FONT_OTHERS=(
 FINGER_PRINT=(
      fprintd
      libfprint-elanmoc2
+     fprintd-pam
 )
 
 REMOVE_PKGS=(
