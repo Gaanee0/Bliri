@@ -17,7 +17,7 @@ COPR_REPOS=(
     errornointernet/quickshell
     heus-sueh/packages
     gaanee/libfprint-elanmoc2
-    wef/cliphist
+    alternateved/cliphist
 )
 
 for repo in "${COPR_REPOS[@]}"; do
