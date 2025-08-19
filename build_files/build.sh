@@ -99,6 +99,7 @@ QUICK_SHELL=(
     gnome-themes-extra
     go
     golang
+    wtype
 )
 
 FONT_OTHERS=(
