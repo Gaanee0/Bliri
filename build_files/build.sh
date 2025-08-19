@@ -95,6 +95,8 @@ QUICK_SHELL=(
     cava
     rsms-inter-fonts
     gnome-themes-extra
+    go
+    golang
 )
 
 FONT_OTHERS=(
@@ -122,7 +124,6 @@ REMOVE_PKGS=(
     mako
     waybar
     swaylock
-    wpaperd
     network-manager-applet
     tmux
 )
