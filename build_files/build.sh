@@ -43,6 +43,7 @@ ADDITIONAL_APPS=(
     zellij
     dislocker
     chezmoi
+    zsh
 )
 
 PODMAN_PKGS=(
