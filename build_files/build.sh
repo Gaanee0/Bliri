@@ -132,7 +132,7 @@ REMOVE_PKGS=(
 )
 
 log "removing libfprint" 
-dnf5 remove -y libfprint
+dnf5 remove -y libfprint cliphist
 
 log "Installing packages using dnf5..."
 dnf5 install --setopt=install_weak_deps=True -y \
