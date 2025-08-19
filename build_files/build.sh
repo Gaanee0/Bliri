@@ -44,6 +44,7 @@ ADDITIONAL_APPS=(
     dislocker
     chezmoi
     zsh
+    keychain
 )
 
 PODMAN_PKGS=(
