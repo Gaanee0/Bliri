@@ -126,6 +126,7 @@ REMOVE_PKGS=(
     swaylock
     network-manager-applet
     tmux
+    blueman
 )
 
 log "removing libfprint" 
