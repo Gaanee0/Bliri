@@ -52,6 +52,7 @@ PODMAN_PKGS=(
   freerdp
   nmap-ncat
   podman-compose
+  podlet
 )
 
 NIRI_PKGS=(
