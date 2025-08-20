@@ -122,7 +122,7 @@ FONT_OTHERS=(
     gnome-icon-theme
     gnome-colors-icon-theme
     adwaita-icon-theme
-    hightcontrast-icon-theme
+    gnome-themes-extra
 )
 
 FINGER_PRINT=(
