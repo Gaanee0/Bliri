@@ -50,6 +50,8 @@ ADDITIONAL_APPS=(
 PODMAN_PKGS=(
   dialog
   freerdp
+  nmap-ncat
+  podman-compose
 )
 
 NIRI_PKGS=(
