@@ -119,6 +119,10 @@ FONT_OTHERS=(
     jetbrains-mono-fonts
     wine-ms-sans-serif-fonts
     la-capitaine-cursor-theme
+    gnome-icon-theme
+    gnome-colors-icon-theme
+    adwaita-icon-theme
+    hightcontrast-icon-theme
 )
 
 FINGER_PRINT=(
