@@ -108,6 +108,7 @@ FINGER_PRINT=(
 
 REMOVE_PKGS=(
     tmux
+    kate
 )
 
 log "removing libfprint" 
