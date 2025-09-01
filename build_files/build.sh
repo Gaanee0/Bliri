@@ -110,6 +110,9 @@ REMOVE_PKGS=(
     tmux
     kate
     kwrite
+    lutris
+    gnome-disks
+    sunshine
 )
 
 log "removing libfprint" 
