@@ -109,13 +109,14 @@ FINGER_PRINT=(
 REMOVE_PKGS=(
     tmux
     kate
+    kwrite
 )
 
 log "removing libfprint" 
 dnf5 remove -y libfprint cliphist
 
 log "Installing packages using dnf5..."
-dnf5 install --setopt=install_weak_deps=Flase -y \
+dnf5 install --setopt=install_weak_deps=False -y \
 ${ADDITIONAL_APPS[@]} \
 ${NIRI_PKGS[@]} \
 ${FONT_OTHERS[@]} \
