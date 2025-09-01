@@ -65,7 +65,6 @@ NIRI_PKGS=(
     cliphist
     wl-clipboard
     wl-clip-persist
-    wlogout
     wl-copy
     wtype
     pavucontrol
@@ -127,7 +126,7 @@ REMOVE_PKGS=(
 )
 
 log "removing libfprint" 
-dnf5 remove -y libfprint cliphist
+dnf5 remove -y libfprint
 
 log "Installing packages using dnf5..."
 dnf5 install --setopt=install_weak_deps=False -y \
