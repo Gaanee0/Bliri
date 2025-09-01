@@ -32,6 +32,10 @@ ADDITIONAL_APPS=(
     fwupd
     fwupd-efi
     kde-partitionmanager
+    dislocker
+    ntfs-3g
+    ntfs2btrfs
+    ntfs-3g-system-compression 
 )
 
 PODMAN_PKGS=(
