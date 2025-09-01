@@ -18,6 +18,7 @@ COPR_REPOS=(
     heus-sueh/packages
     gaanee/libfprint-elanmoc2
     alternateved/cliphist
+    lihaohong/yazi
 )
 
 for repo in "${COPR_REPOS[@]}"; do
