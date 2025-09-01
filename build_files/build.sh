@@ -100,6 +100,7 @@ FONT_OTHERS=(
     gnome-colors-icon-theme
     adwaita-icon-theme
     rsms-inter-fonts
+    gnome-themes-extra
 )
 
 FINGER_PRINT=(
