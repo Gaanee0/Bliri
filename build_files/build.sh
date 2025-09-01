@@ -35,7 +35,10 @@ ADDITIONAL_APPS=(
     dislocker
     ntfs-3g
     ntfs2btrfs
-    ntfs-3g-system-compression 
+    ntfs-3g-system-compression
+    helix
+    yazi
+    zellij
 )
 
 PODMAN_PKGS=(
