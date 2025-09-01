@@ -28,23 +28,10 @@ log "Enable terra repositories..."
 dnf5 config-manager setopt terra.enabled=1 terra-extras.enabled=1
 
 ADDITIONAL_APPS=(
-    kitty
-    dolphin
-    filelight
-    kde-connect
-    kio-admin
     testdisk
     fwupd
     fwupd-efi
-    gnome-firmware
     kde-partitionmanager
-    syncthing
-    helix
-    zellij
-    dislocker
-    chezmoi
-    zsh
-    keychain
 )
 
 PODMAN_PKGS=(
@@ -52,36 +39,28 @@ PODMAN_PKGS=(
   freerdp
   nmap-ncat
   podman-compose
-  podlet
 )
 
 NIRI_PKGS=(
     niri
-    wpaperd
-    swaylock
     swayidle
     swaybg
     brightnessctl
-    fuzzel
-    mako
-    waybar
     xwayland-satellite
     gnome-keyring
     wireplumber
     xdg-desktop-portal-gnome
     xdg-desktop-portal-gtk
-    polkit-kde
+    polkit-mate
     cliphist
     wl-clipboard
-    blueman
     wl-clip-persist
     wlogout
     wl-copy
-    network-manager-applet
+    wtype
     pavucontrol
     qt6ct
     qt5ct
-    kvantum
 )
 
 QUICK_SHELL=(
@@ -97,14 +76,10 @@ QUICK_SHELL=(
     matugen
     sassc
     libass
-    plasma-breeze
-    breeze-gtk
     cava
-    rsms-inter-fonts
-    gnome-themes-extra
     go
     golang
-    wtype
+    gammastep
 )
 
 FONT_OTHERS=(
@@ -122,6 +97,7 @@ FONT_OTHERS=(
     gnome-icon-theme
     gnome-colors-icon-theme
     adwaita-icon-theme
+    rsms-inter-fonts
 )
 
 FINGER_PRINT=(
@@ -131,20 +107,14 @@ FINGER_PRINT=(
 )
 
 REMOVE_PKGS=(
-    alacritty
-    mako
-    waybar
-    swaylock
-    network-manager-applet
     tmux
-    blueman
 )
 
 log "removing libfprint" 
 dnf5 remove -y libfprint cliphist
 
 log "Installing packages using dnf5..."
-dnf5 install --setopt=install_weak_deps=True -y \
+dnf5 install --setopt=install_weak_deps=Flase -y \
 ${ADDITIONAL_APPS[@]} \
 ${NIRI_PKGS[@]} \
 ${FONT_OTHERS[@]} \
