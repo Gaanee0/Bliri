@@ -51,7 +51,7 @@ NIRI_PKGS=(
     wireplumber
     xdg-desktop-portal-gnome
     xdg-desktop-portal-gtk
-    polkit-mate
+    mate-polkit
     cliphist
     wl-clipboard
     wl-clip-persist
