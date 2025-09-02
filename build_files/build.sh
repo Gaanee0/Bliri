@@ -20,7 +20,7 @@ COPR_REPOS=(
     alternateved/cliphist
     lihaohong/yazi
     arrobbins/JDSP4Linux
-    lukenukem/asus-linux 
+    #lukenukem/asus-linux 
 )
 
 for repo in "${COPR_REPOS[@]}"; do
@@ -39,9 +39,9 @@ ADDITIONAL_APPS=(
     ntfs-3g-system-compression
     JamesDSP
     cloudflared
-    asusctl
-    supergfxctl
-    asusctl-rog-gui
+    #asusctl
+    #supergfxctl
+    #asusctl-rog-gui
 )
 
 TERMINAL_APPS=(
@@ -60,13 +60,13 @@ PODMAN_PKGS=(
     podman-compose
 )
 
-#DOCKER_PKGS=(
-#    containerd.io
-#    docker-buildx-plugin
-#    docker-ce
-#    docker-ce-cli
-#    docker-compose-plugin
-#)
+DOCKER_PKGS=(
+    containerd.io
+    docker-buildx-plugin
+    docker-ce
+    docker-ce-cli
+    docker-compose-plugin
+)
 
 NIRI_PKGS=(
     niri
@@ -141,23 +141,24 @@ REMOVE_PKGS=(
     kwrite
     lutris
     gnome-disks
+    gnome-disk-utility
     sunshine
 )
-
-log "removing libfprint" 
-dnf5 remove -y libfprint
 
 log "Enable terra & docker repositories..."
 dnf5 config-manager setopt terra.enabled=1 terra-extras.enabled=1
 dnf5 config-manager addrepo --from-repofile="https://pkg.cloudflare.com/cloudflared.repo"
-#dnf5 config-manager addrepo --from-repofile="https://download.docker.com/linux/fedora/docker-ce.repo"
-#dnf5 config-manager setopt docker-ce-stable.enabled=0
-#dnf5 install -y --enable-repo="docker-ce-stable" "${DOCKER_PKGS[@]}" || {
-#    if (($(lsb_release -sr) == 42)); then
-#        echo "::info::Missing docker packages in f42, falling back to test repos..."
-#        dnf5 install -y --enablerepo="docker-ce-test" "${docker_pkgs[@]}"
-#    fi
-#}
+dnf5 config-manager addrepo --from-repofile="https://download.docker.com/linux/fedora/docker-ce.repo"
+dnf5 config-manager setopt docker-ce-stable.enabled=0
+dnf5 install -y --enable-repo="docker-ce-stable" "${DOCKER_PKGS[@]}" || {
+    if (($(lsb_release -sr) == 42)); then
+        echo "::info::Missing docker packages in f42, falling back to test repos..."
+        dnf5 install -y --enablerepo="docker-ce-test" "${DOCKER_PKGS[@]}"
+    fi
+}
+
+log "removing libfprint" 
+dnf5 remove -y libfprint
 
 log "Installing packages using dnf5..."
 dnf5 install --setopt=install_weak_deps=False -y \
