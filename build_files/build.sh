@@ -25,8 +25,9 @@ for repo in "${COPR_REPOS[@]}"; do
   dnf5 -y copr enable "$repo"
 done
 
-log "Enable terra repositories..."
+log "Enable terra & docker repositories..."
 dnf5 config-manager setopt terra.enabled=1 terra-extras.enabled=1
+dnf5 config-manager --add-repo https://download.docker.com/linux/fedora/docker-ce.repo
 
 ADDITIONAL_APPS=(
     testdisk
@@ -47,6 +48,11 @@ PODMAN_PKGS=(
     freerdp
     nmap-ncat
     podman-compose
+    docker-ce 
+    docker-ce-cli 
+    containerd.io 
+    docker-buildx-plugin 
+    docker-compose-plugin
 )
 
 NIRI_PKGS=(
