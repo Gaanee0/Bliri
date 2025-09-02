@@ -19,6 +19,7 @@ COPR_REPOS=(
     gaanee/libfprint-elanmoc2
     alternateved/cliphist
     lihaohong/yazi
+    arrobbins/JDSP4Linux
 )
 
 for repo in "${COPR_REPOS[@]}"; do
@@ -38,21 +39,29 @@ ADDITIONAL_APPS=(
     ntfs-3g
     ntfs2btrfs
     ntfs-3g-system-compression
+    JamesDSP
+    cloudflared
+)
+
+TERMINAL_APPS=(
     helix
     yazi
     zellij
-)
+    fish
+    starship
+    keychain
+) 
 
 PODMAN_PKGS=(
     dialog
     freerdp
     nmap-ncat
     podman-compose
-    #docker-ce 
-    #docker-ce-cli 
-    #containerd.io 
-    #docker-buildx-plugin 
-    #docker-compose-plugin
+    containerd.io
+    docker-buildx-plugin
+    docker-ce
+    docker-ce-cli
+    docker-compose-plugin
 )
 
 NIRI_PKGS=(
@@ -125,7 +134,6 @@ FINGER_PRINT=(
 
 REMOVE_PKGS=(
     tmux
-    kate
     kwrite
     lutris
     gnome-disks
@@ -142,6 +150,7 @@ ${NIRI_PKGS[@]} \
 ${FONTS_OTHERS[@]} \
 ${PODMAN_PKGS[@]} \
 ${QUICK_SHELL[@]} \
+${TERMINAL_APPS[@]} \
 ${FINGER_PRINT[@]} 
 
 log "Removing packages from dependcies"
