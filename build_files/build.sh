@@ -28,7 +28,16 @@ done
 
 log "Enable terra & docker repositories..."
 dnf5 config-manager setopt terra.enabled=1 terra-extras.enabled=1
-#dnf5 config-manager --add-repo https://download.docker.com/linux/fedora/docker-ce.repo
+dnf5 install --enable-repo="copr:copr.fedorainfracloud.org:ublue-os:packages" -y \
+    ublue-setup-services
+dnf5 config-manager addrepo --from-repofile="https://download.docker.com/linux/fedora/docker-ce.repo"
+dnf5 config-manager setopt docker-ce-stable.enabled=0
+dnf5 install -y --enable-repo="docker-ce-stable" "${docker_pkgs[@]}" || {
+    if (($(lsb_release -sr) == 42)); then
+        echo "::info::Missing docker packages in f42, falling back to test repos..."
+        dnf5 install -y --enablerepo="docker-ce-test" "${docker_pkgs[@]}"
+    fi
+}
 
 ADDITIONAL_APPS=(
     testdisk
@@ -163,3 +172,6 @@ for repo in "${COPR_REPOS[@]}"; do
 done
 
 log "Enabling systemd.services..."
+mkdir -p /etc/modules-load.d && cat >>/etc/modules-load.d/ip_tables.conf <<EOF
+iptable_nat
+EOF
