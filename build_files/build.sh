@@ -80,7 +80,7 @@ NIRI_PKGS=(
     mate-polkit
     cliphist
     wl-clipboard
-    wl-clip-persist
+    #wl-clip-persist
     wl-copy
     wtype
     pavucontrol
