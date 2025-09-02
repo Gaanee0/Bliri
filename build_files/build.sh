@@ -43,10 +43,10 @@ ADDITIONAL_APPS=(
 )
 
 PODMAN_PKGS=(
-  dialog
-  freerdp
-  nmap-ncat
-  podman-compose
+    dialog
+    freerdp
+    nmap-ncat
+    podman-compose
 )
 
 NIRI_PKGS=(
@@ -91,7 +91,7 @@ QUICK_SHELL=(
     gammastep
 )
 
-FONT_OTHERS=(
+FONTS_OTHERS=(
     material-icons-fonts
     fira-code-fonts
     fontawesome-fonts-all
@@ -108,6 +108,7 @@ FONT_OTHERS=(
     adwaita-icon-theme
     rsms-inter-fonts
     gnome-themes-extra
+    texlive-atkinson
 )
 
 FINGER_PRINT=(
@@ -132,7 +133,7 @@ log "Installing packages using dnf5..."
 dnf5 install --setopt=install_weak_deps=False -y \
 ${ADDITIONAL_APPS[@]} \
 ${NIRI_PKGS[@]} \
-${FONT_OTHERS[@]} \
+${FONTS_OTHERS[@]} \
 ${PODMAN_PKGS[@]} \
 ${QUICK_SHELL[@]} \
 ${FINGER_PRINT[@]} 
