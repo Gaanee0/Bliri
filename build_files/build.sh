@@ -20,7 +20,6 @@ COPR_REPOS=(
     alternateved/cliphist
     lihaohong/yazi
     arrobbins/JDSP4Linux
-    #lukenukem/asus-linux 
 )
 
 for repo in "${COPR_REPOS[@]}"; do
@@ -39,9 +38,6 @@ ADDITIONAL_APPS=(
     ntfs-3g-system-compression
     JamesDSP
     cloudflared
-    #asusctl
-    #supergfxctl
-    #asusctl-rog-gui
 )
 
 TERMINAL_APPS=(
@@ -183,3 +179,4 @@ log "Enabling systemd.services..."
 mkdir -p /etc/modules-load.d && cat >>/etc/modules-load.d/ip_tables.conf <<EOF
 iptable_nat
 EOF
+systemctl enable docker
