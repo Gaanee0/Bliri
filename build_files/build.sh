@@ -26,18 +26,6 @@ for repo in "${COPR_REPOS[@]}"; do
   dnf5 -y copr enable "$repo"
 done
 
-log "Enable terra & docker repositories..."
-dnf5 config-manager setopt terra.enabled=1 terra-extras.enabled=1
-dnf5 install --enable-repo="copr:copr.fedorainfracloud.org:ublue-os:packages" -y \
-    ublue-setup-services
-dnf5 config-manager addrepo --from-repofile="https://download.docker.com/linux/fedora/docker-ce.repo"
-dnf5 config-manager setopt docker-ce-stable.enabled=0
-dnf5 install -y --enable-repo="docker-ce-stable" "${docker_pkgs[@]}" || {
-    if (($(lsb_release -sr) == 42)); then
-        echo "::info::Missing docker packages in f42, falling back to test repos..."
-        dnf5 install -y --enablerepo="docker-ce-test" "${docker_pkgs[@]}"
-    fi
-}
 
 ADDITIONAL_APPS=(
     testdisk
@@ -66,6 +54,9 @@ PODMAN_PKGS=(
     freerdp
     nmap-ncat
     podman-compose
+)
+
+DOCKER_PKGS=(
     containerd.io
     docker-buildx-plugin
     docker-ce
@@ -151,6 +142,17 @@ REMOVE_PKGS=(
 
 log "removing libfprint" 
 dnf5 remove -y libfprint
+
+log "Enable terra & docker repositories..."
+dnf5 config-manager setopt terra.enabled=1 terra-extras.enabled=1
+dnf5 config-manager addrepo --from-repofile="https://download.docker.com/linux/fedora/docker-ce.repo"
+dnf5 config-manager setopt docker-ce-stable.enabled=0
+dnf5 install -y --enable-repo="docker-ce-stable" "${DOCKER_PKGS[@]}" || {
+    if (($(lsb_release -sr) == 42)); then
+        echo "::info::Missing docker packages in f42, falling back to test repos..."
+        dnf5 install -y --enablerepo="docker-ce-test" "${docker_pkgs[@]}"
+    fi
+}
 
 log "Installing packages using dnf5..."
 dnf5 install --setopt=install_weak_deps=False -y \
