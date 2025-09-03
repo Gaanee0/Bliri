@@ -38,7 +38,6 @@ ADDITIONAL_APPS=(
     ntfs-3g-system-compression
     JamesDSP
     cloudflared
-    obs-studio
 )
 
 TERMINAL_APPS=(
