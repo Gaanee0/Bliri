@@ -26,6 +26,11 @@ for repo in "${COPR_REPOS[@]}"; do
   dnf5 -y copr enable "$repo"
 done
 
+log "Enable terra & docker repositories..."
+dnf5 config-manager setopt terra.enabled=1 terra-extras.enabled=1
+dnf5 config-manager addrepo --from-repofile="https://pkg.cloudflare.com/cloudflared.repo"
+dnf5 config-manager addrepo --from-repofile="https://download.docker.com/linux/fedora/docker-ce.repo"
+dnf5 config-manager setopt docker-ce-stable.enabled=0
 
 ADDITIONAL_APPS=(
     testdisk
@@ -138,18 +143,6 @@ REMOVE_PKGS=(
     sunshine
 )
 
-log "Enable terra & docker repositories..."
-dnf5 config-manager setopt terra.enabled=1 terra-extras.enabled=1
-dnf5 config-manager addrepo --from-repofile="https://pkg.cloudflare.com/cloudflared.repo"
-dnf5 config-manager addrepo --from-repofile="https://download.docker.com/linux/fedora/docker-ce.repo"
-dnf5 config-manager setopt docker-ce-stable.enabled=0
-dnf5 install -y --enable-repo="docker-ce-stable" "${DOCKER_PKGS[@]}" || {
-    if (($(lsb_release -sr) == 42)); then
-        echo "::info::Missing docker packages in f42, falling back to test repos..."
-        dnf5 install -y --enablerepo="docker-ce-test" "${DOCKER_PKGS[@]}"
-    fi
-}
-
 log "removing libfprint" 
 dnf5 remove -y libfprint
 
@@ -161,7 +154,14 @@ ${FONTS_OTHERS[@]} \
 ${PODMAN_PKGS[@]} \
 ${QUICK_SHELL[@]} \
 ${TERMINAL_APPS[@]} \
-${FINGER_PRINT[@]} 
+${FINGER_PRINT[@]}
+
+dnf5 install -y --enable-repo="docker-ce-stable" "${DOCKER_PKGS[@]}" || {
+    if (($(lsb_release -sr) == 42)); then
+        echo "::info::Missing docker packages in f42, falling back to test repos..."
+        dnf5 install -y --enablerepo="docker-ce-test" "${DOCKER_PKGS[@]}"
+    fi
+}
 
 log "Removing packages from dependcies"
 dnf5 remove -y \
