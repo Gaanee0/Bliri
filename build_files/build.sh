@@ -20,6 +20,8 @@ COPR_REPOS=(
     alternateved/cliphist
     lihaohong/yazi
     arrobbins/JDSP4Linux
+    varlad/zellij
+    atim/starship
 )
 
 for repo in "${COPR_REPOS[@]}"; do
