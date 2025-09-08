@@ -43,6 +43,7 @@ ADDITIONAL_APPS=(
     ntfs-3g-system-compression
     JamesDSP
     cloudflared
+    syncthing
 )
 
 TERMINAL_APPS=(
