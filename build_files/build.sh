@@ -46,6 +46,7 @@ ADDITIONAL_APPS=(
     JamesDSP
     cloudflared
     syncthing
+    flatpak-builder
 )
 
 TERMINAL_APPS=(
