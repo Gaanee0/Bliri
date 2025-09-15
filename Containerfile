@@ -6,6 +6,10 @@ COPY build_files /
 #FROM ghcr.io/ublue-os/bazzite-dx-nvidia:latest
 FROM ghcr.io/ublue-os/bazzite-asus-nvidia-open:latest
 
+chmod +x \
+    /ctx/build.sh \
+    /ctx/nix-package-manager \
+
 ## Other possible base images include:
 # FROM ghcr.io/ublue-os/bazzite:latest
 # FROM ghcr.io/ublue-os/bluefin-nvidia:stable
@@ -23,7 +27,6 @@ RUN --mount=type=bind,from=ctx,source=/,target=/ctx \
     --mount=type=cache,dst=/var/cache \
     --mount=type=cache,dst=/var/log \
     --mount=type=tmpfs,dst=/tmp \
-    chmod +x /ctx/build.sh /ctx/nix-package-manager.sh && \
     /ctx/build.sh && \
     /ctx/nix-package-manager.sh  && \
     ostree container commit
