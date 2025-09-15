@@ -21,7 +21,7 @@ FROM ghcr.io/ublue-os/bazzite-asus-nvidia-open:latest
  
 RUN chmod +x \
     /ctx/build.sh \
-    /ctx/nix-package-manager
+    /ctx/nix-package-manager.sh
 
 RUN --mount=type=bind,from=ctx,source=/,target=/ctx \
     --mount=type=cache,dst=/var/cache \
