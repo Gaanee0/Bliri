@@ -47,6 +47,7 @@ ADDITIONAL_APPS=(
     cloudflared
     syncthing
     flatpak-builder
+    python3-aiohttp
 )
 
 TERMINAL_APPS=(
