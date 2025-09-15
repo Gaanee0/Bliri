@@ -1,6 +1,9 @@
 #!/bin/bash
 
-set -ouex pipefail
+#set -ouex pipefail
+set ${SET_X:+-x} -eou pipefail
+
+trap '[[ $BASH_COMMAND != echo* ]] && [[ $BASH_COMMAND != log* ]] && echo "+ $BASH_COMMAND"' DEBUG
 
 RELEASE="$(rpm -E %fedora)"
 
@@ -167,6 +170,12 @@ dnf5 install -y --enable-repo="docker-ce-stable" "${DOCKER_PKGS[@]}" || {
     fi
 }
 
+log "Creating /nix and downloading determinite Nix installer."
+
+mkdir -p /nix && \
+	curl --proto '=https' --tlsv1.2 -sSf -L https://install.determinate.systems/nix -o /nix/determinate-nix-installer.sh && \
+	chmod a+rx /nix/determinate-nix-installer.sh
+    
 log "Removing packages from dependcies"
 dnf5 remove -y \
 ${REMOVE_PKGS[@]}
