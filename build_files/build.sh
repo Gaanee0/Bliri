@@ -173,8 +173,9 @@ dnf5 install -y --enable-repo="docker-ce-stable" "${DOCKER_PKGS[@]}" || {
 
 log "Installing Determinate Nix"
 
-RUN curl --proto '=https' --tlsv1.2 -sSf -L https://install.determinate.systems/nix \
-  | sh -s -- install linux \
+mkdir -p /nix && \
+    curl --proto '=https' --tlsv1.2 -sSf -L https://install.determinate.systems/nix \
+    | sh -s -- install linux \
       --determinate \
       --init systemd \
       --no-confirm \
