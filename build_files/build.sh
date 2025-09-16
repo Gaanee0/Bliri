@@ -176,7 +176,7 @@ log "Creating /nix and downloading determinite Nix installer."
 mkdir -p /nix && \
 	curl --proto '=https' --tlsv1.2 -sSf -L https://install.determinate.systems/nix -o /nix/determinate-nix-installer.sh && \
 	chmod a+rx /nix/determinate-nix-installer.sh
-	/nix/determinate-nix-installer.sh install --determinate --no-confirm
+	/nix/determinate-nix-installer.sh install --determinate --no-confirm --no-start-daemon
     
 log "Removing packages from dependcies"
 dnf5 remove -y \
@@ -191,4 +191,6 @@ log "Enabling systemd.services..."
 mkdir -p /etc/modules-load.d && cat >>/etc/modules-load.d/ip_tables.conf <<EOF
 iptable_nat
 EOF
+
 systemctl enable docker
+systemctl enable nix-daemon
