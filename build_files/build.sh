@@ -50,6 +50,7 @@ ADDITIONAL_APPS=(
     cloudflared
     syncthing
     flatpak-builder
+    ghostty
 )
 
 TERMINAL_APPS=(
