@@ -176,7 +176,7 @@ log "Creating /nix and downloading determinite Nix installer."
 mkdir -p /nix && \
 	curl --proto '=https' --tlsv1.2 -sSf -L https://install.determinate.systems/nix -o /nix/determinate-nix-installer.sh && \
 	chmod a+rx /nix/determinate-nix-installer.sh
-	/nix/determinate-nix-installer.sh install --determinate --no-confirm -- --yes --no-start-daemon
+	/nix/determinate-nix-installer.sh install --determinate --no-confirm -- --yes
     
 log "Removing packages from dependcies"
 dnf5 remove -y \
@@ -193,4 +193,4 @@ iptable_nat
 EOF
 
 systemctl enable docker
-systemctl enable nix-daemon
+systemctl enable nix-daemon.socket
