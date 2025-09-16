@@ -171,19 +171,6 @@ dnf5 install -y --enable-repo="docker-ce-stable" "${DOCKER_PKGS[@]}" || {
     fi
 }
 
-log "Installing Determinate Nix"
-
-mkdir -p /nix && \
-    curl --proto '=https' --tlsv1.2 -sSf -L https://install.determinate.systems/nix \
-    | sh -s -- install linux \
-      --determinate \
-      --init systemd \
-      --no-confirm \
-      --extra-conf "sandbox = false" \
-      --destdir /nix
-      . /nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh
-
-
 log "Removing packages from dependcies"
 dnf5 remove -y \
 ${REMOVE_PKGS[@]}
