@@ -174,9 +174,9 @@ dnf5 install -y --enable-repo="docker-ce-stable" "${DOCKER_PKGS[@]}" || {
 log "Creating /nix and downloading determinite Nix installer."
 
 mkdir -p /nix && \
-	curl --proto '=https' --tlsv1.2 -sSf -L https://install.determinate.systems/nix -o /nix/determinate-nix-installer.sh && \
-	chmod a+rx /nix/determinate-nix-installer.sh
-	/nix/determinate-nix-installer.sh install --determinate --no-confirm -- --no-start-daemon
+	curl --proto '=https' --tlsv1.2 -sSf -L https://install.determinate.systems/nix -o /nix/nix && \
+	chmod a+rx /nix/nix 
+	/nix/nix | sh -s -- install --determinate --no-confirm -- --no-start-daemon
     
 log "Removing packages from dependcies"
 dnf5 remove -y \
