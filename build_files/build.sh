@@ -175,9 +175,12 @@ log "Installing Determinate Nix"
 
 curl --proto '=https' --tlsv1.2 -sSf -L https://install.determinate.systems/nix | sh -s -- install linux \
   --determinate \
+  --extra-conf "sandbox = false" \
   --init none \
-  --no-confirm
-. /nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh
+  --no-confirm \
+  --force
+  . /nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh
+  nix --version
 
 log "Removing packages from dependcies"
 dnf5 remove -y \
