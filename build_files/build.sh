@@ -24,6 +24,7 @@ COPR_REPOS=(
     lihaohong/yazi
     arrobbins/JDSP4Linux
     varlad/zellij
+    lukenukem/asus-linux
     atim/starship
 )
 
@@ -142,6 +143,12 @@ FINGER_PRINT=(
      fprintd-pam
 )
 
+ASUS_PKGS=(
+    asusctl
+    supergfxctl
+    asusctl-rog-gui
+)
+
 REMOVE_PKGS=(
     tmux
     kwrite
@@ -186,7 +193,4 @@ iptable_nat
 EOF
 
 systemctl enable docker
-systemctl enable nix-daemon
-
-restorecon -RF /nix
 
