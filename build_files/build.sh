@@ -173,14 +173,15 @@ dnf5 install -y --enable-repo="docker-ce-stable" "${DOCKER_PKGS[@]}" || {
 
 log "Installing Determinate Nix"
 
-curl --proto '=https' --tlsv1.2 -sSf -L https://install.determinate.systems/nix | sh -s -- install linux \
-  --determinate \
-  --extra-conf "sandbox = false" \
-  --init none \
-  --no-confirm \
-  --force
-  . /nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh
-  nix --version
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: DeterminateSystems/determinate-nix-action@v3.x.y
+      - name: Run a Nix command
+        run: nix --version
+
 
 log "Removing packages from dependcies"
 dnf5 remove -y \
@@ -197,3 +198,7 @@ iptable_nat
 EOF
 
 systemctl enable docker
+systemctl enable nix-daemon
+
+restorecon -RF /nix
+
