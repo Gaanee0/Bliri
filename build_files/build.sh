@@ -35,8 +35,6 @@ done
 log "Enable terra & docker repositories..."
 dnf5 config-manager setopt terra.enabled=1 terra-extras.enabled=1
 dnf5 config-manager addrepo --from-repofile="https://pkg.cloudflare.com/cloudflared.repo"
-dnf5 config-manager addrepo --from-repofile="https://download.docker.com/linux/fedora/docker-ce.repo"
-dnf5 config-manager setopt docker-ce-stable.enabled=0
 
 ADDITIONAL_APPS=(
     testdisk
@@ -68,14 +66,6 @@ PODMAN_PKGS=(
     freerdp
     nmap-ncat
     podman-compose
-)
-
-DOCKER_PKGS=(
-    containerd.io
-    docker-buildx-plugin
-    docker-ce
-    docker-ce-cli
-    docker-compose-plugin
 )
 
 NIRI_PKGS=(
@@ -171,13 +161,6 @@ ${QUICK_SHELL[@]} \
 ${TERMINAL_APPS[@]} \
 ${FINGER_PRINT[@]}
 
-dnf5 install -y --enable-repo="docker-ce-stable" "${DOCKER_PKGS[@]}" || {
-    if (($(lsb_release -sr) == 42)); then
-        echo "::info::Missing docker packages in f42, falling back to test repos..."
-        dnf5 install -y --enablerepo="docker-ce-test" "${DOCKER_PKGS[@]}"
-    fi
-}
-
 log "Removing packages from dependcies"
 dnf5 remove -y \
 ${REMOVE_PKGS[@]}
@@ -186,11 +169,3 @@ log "Disable Copr repos to get rid of clutter..."
 for repo in "${COPR_REPOS[@]}"; do
   dnf5 -y copr disable "$repo"
 done
-
-log "Enabling systemd.services..."
-mkdir -p /etc/modules-load.d && cat >>/etc/modules-load.d/ip_tables.conf <<EOF
-iptable_nat
-EOF
-
-systemctl enable docker
-
