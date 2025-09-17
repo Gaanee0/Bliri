@@ -1,4 +1,4 @@
-#!/bin/bash
+#/!/bin/bash
 
 set ${SET_X:+-x} -eou pipefail
 
@@ -158,6 +158,7 @@ ${FONTS_OTHERS[@]} \
 ${PODMAN_PKGS[@]} \
 ${QUICK_SHELL[@]} \
 ${TERMINAL_APPS[@]} \
+${ASUS_PKGS[@]} \
 ${FINGER_PRINT[@]}
 
 log "Removing packages from dependcies"
