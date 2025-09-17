@@ -165,7 +165,32 @@ log "Removing packages from dependcies"
 dnf5 remove -y \
 ${REMOVE_PKGS[@]}
 
+mkdir -p /nix && \
+	curl --proto '=https' --tlsv1.2 -sSf -L https://install.determinate.systems/nix -o /nix/determinate-nix-installer.sh && \
+	chmod a+rx /nix/determinate-nix-installer.sh
+
 log "Disable Copr repos to get rid of clutter..."
 for repo in "${COPR_REPOS[@]}"; do
   dnf5 -y copr disable "$repo"
 done
+
+log "enabling systemd services and units"
+
+cat >/usr/lib/systemd/system/nix-install.service <<'EOF'
+[Unit]
+Description=Install Determinate Nix on first boot
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+ExecStart=/nix/determinate-nix-installer.sh install --determinate --no-confirm -- --init
+ExecStartPost=/bin/systemctl disable nix-install.service
+ExecStartPost=/bin/rm -f /usr/lib/systemd/system/nix-install.service
+RemainAfterExit=no
+
+[Install]
+WantedBy=multi-user.target
+EOF
+
+systemctl enable nix-install.service
