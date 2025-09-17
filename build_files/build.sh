@@ -161,6 +161,10 @@ ${TERMINAL_APPS[@]} \
 ${ASUS_PKGS[@]} \
 ${FINGER_PRINT[@]}
 
+mkdir -p /nix && \
+	curl --proto '=https' --tlsv1.2 -sSf -L https://install.determinate.systems/nix -o /nix/determinate-nix-installer.sh && \
+	chmod a+rx /nix/determinate-nix-installer.sh
+
 log "Removing packages from dependcies"
 dnf5 remove -y \
 ${REMOVE_PKGS[@]}
