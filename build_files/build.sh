@@ -174,6 +174,8 @@ for repo in "${COPR_REPOS[@]}"; do
   dnf5 -y copr disable "$repo"
 done
 
+dnf5 config-manager setopt cloudflared.enabled=0
+
 log "enabling systemd services and units"
 
 cat >/usr/lib/systemd/system/nix-install.service <<'EOF'
