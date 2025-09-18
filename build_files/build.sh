@@ -25,6 +25,7 @@ COPR_REPOS=(
     varlad/zellij
     lukenukem/asus-linux
     atim/starship
+    medzik/cloudflared 
 )
 
 for repo in "${COPR_REPOS[@]}"; do
@@ -33,7 +34,6 @@ done
 
 log "Enable terra & docker repositories..."
 dnf5 config-manager setopt terra.enabled=1 terra-extras.enabled=1
-dnf5 config-manager addrepo --from-repofile="https://pkg.cloudflare.com/cloudflared.repo"
 
 ADDITIONAL_APPS=(
     testdisk
@@ -173,26 +173,3 @@ log "Disable Copr repos to get rid of clutter..."
 for repo in "${COPR_REPOS[@]}"; do
   dnf5 -y copr disable "$repo"
 done
-
-dnf5 config-manager setopt cloudflared.enabled=0
-
-log "enabling systemd services and units"
-
-cat >/usr/lib/systemd/system/nix-install.service <<'EOF'
-[Unit]
-Description=Install Determinate Nix on first boot
-After=network-online.target
-Wants=network-online.target
-
-[Service]
-Type=oneshot
-ExecStart=/nix/determinate-nix-installer.sh install --determinate --no-confirm -- --init
-ExecStartPost=/bin/systemctl disable nix-install.service
-ExecStartPost=/bin/rm -f /usr/lib/systemd/system/nix-install.service
-RemainAfterExit=no
-
-[Install]
-WantedBy=multi-user.target
-EOF
-
-systemctl enable nix-install.service
