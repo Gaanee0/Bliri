@@ -141,10 +141,8 @@ ASUS_PKGS=(
 REMOVE_PKGS=(
     tmux
     kwrite
-    lutris
     gnome-disks
     gnome-disk-utility
-    sunshine
 )
 
 log "removing libfprint" 
