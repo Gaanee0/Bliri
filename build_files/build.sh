@@ -70,8 +70,6 @@ PODMAN_PKGS=(
 NIRI_PKGS=(
     niri
     alacritty
-    fuzzel
-    swayidle
     swaybg
     brightnessctl
     xwayland-satellite
