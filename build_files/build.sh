@@ -15,7 +15,6 @@ COPR_REPOS=(
     tofik/sway
     ulysg/xwayland-satellite
     yalter/niri
-    leloubil/wl-clip-persist
     errornointernet/quickshell
     heus-sueh/packages
     gaanee/libfprint-elanmoc2
