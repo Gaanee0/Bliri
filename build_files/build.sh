@@ -80,8 +80,6 @@ NIRI_PKGS=(
     cliphist
     wl-clipboard
     pavucontrol
-    qt6ct
-    qt5ct
 )
 
 QUICK_SHELL=(
@@ -101,6 +99,8 @@ QUICK_SHELL=(
     go
     golang
     gammastep
+    qt6ct
+    qt5ct
 )
 
 FONTS_OTHERS=(
