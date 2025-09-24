@@ -24,7 +24,6 @@ COPR_REPOS=(
     varlad/zellij
     lukenukem/asus-linux
     atim/starship
-    medzik/cloudflared 
 )
 
 for repo in "${COPR_REPOS[@]}"; do
@@ -33,6 +32,7 @@ done
 
 log "Enable terra & docker repositories..."
 dnf5 config-manager setopt terra.enabled=1 terra-extras.enabled=1
+dnf5 config-manager addrepo --from-repofile="https://pkg.cloudflare.com/cloudflared.repo"
 
 ADDITIONAL_APPS=(
     testdisk
@@ -168,3 +168,5 @@ log "Disable Copr repos to get rid of clutter..."
 for repo in "${COPR_REPOS[@]}"; do
   dnf5 -y copr disable "$repo"
 done
+dnf5 config-manager --remove-repo=cloudflared-stable
+
