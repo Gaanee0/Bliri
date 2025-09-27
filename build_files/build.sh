@@ -169,4 +169,5 @@ for repo in "${COPR_REPOS[@]}"; do
   dnf5 -y copr disable "$repo"
 done
 
-dnf5 config-manager unsetopt cloudflared.repo
+dnf5 config-manager unsetopt cloudflared-stable
+dnf5 clean all
