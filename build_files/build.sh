@@ -160,6 +160,7 @@ ${PODMAN_PKGS[@]} \
 ${QUICK_SHELL[@]} \
 ${TERMINAL_APPS[@]} \
 ${ASUS_PKGS[@]} \
+${COSMIC_PKGS[@]} \
 ${FINGER_PRINT[@]}
 
 log "Removing packages from dependcies"
