@@ -24,6 +24,7 @@ COPR_REPOS=(
     varlad/zellij
     lukenukem/asus-linux
     atim/starship
+    ryanabx/cosmic-epoch
 )
 
 for repo in "${COPR_REPOS[@]}"; do
@@ -123,16 +124,21 @@ FONTS_OTHERS=(
     texlive-atkinson
 )
 
-FINGER_PRINT=(
-     fprintd
-     libfprint-elanmoc2
-     fprintd-pam
-)
-
 ASUS_PKGS=(
     asusctl
     supergfxctl
     asusctl-rog-gui
+)
+
+COSMIC_PKGS=(
+    @cosmic-desktop
+    @cosmic-desktop-apps
+)
+
+FINGER_PRINT=(
+     fprintd
+     libfprint-elanmoc2
+     fprintd-pam
 )
 
 REMOVE_PKGS=(
@@ -169,5 +175,4 @@ for repo in "${COPR_REPOS[@]}"; do
   dnf5 -y copr disable "$repo"
 done
 
-dnf5 config-manager unsetopt cloudflared-stable
 dnf5 clean all
