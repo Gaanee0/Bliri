@@ -130,9 +130,10 @@ ASUS_PKGS=(
     asusctl-rog-gui
 )
 
-COSMIC_PKGS=(
+EXTRA_DE_PKGS=(
     @cosmic-desktop
     @cosmic-desktop-apps
+    @gnome-desktop
 )
 
 FINGER_PRINT=(
@@ -160,7 +161,7 @@ ${PODMAN_PKGS[@]} \
 ${QUICK_SHELL[@]} \
 ${TERMINAL_APPS[@]} \
 ${ASUS_PKGS[@]} \
-${COSMIC_PKGS[@]} \
+${EXTRA_DE_PKGS[@]} \
 ${FINGER_PRINT[@]}
 
 log "Removing packages from dependcies"
