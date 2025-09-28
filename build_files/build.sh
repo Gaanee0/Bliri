@@ -179,5 +179,6 @@ done
 
 log "systemd servies"
     systemctl disable network-online.target
+    dnf5 config-manager unsetopt cloudflared-stable.repo
 
 dnf5 clean all
