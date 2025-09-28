@@ -131,8 +131,8 @@ ASUS_PKGS=(
 )
 
 EXTRA_DE_PKGS=(
-    @cosmic-desktop
-    @cosmic-desktop-apps
+    #@cosmic-desktop
+    #@cosmic-desktop-apps
     #@gnome-desktop
 )
 
