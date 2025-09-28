@@ -177,4 +177,7 @@ for repo in "${COPR_REPOS[@]}"; do
   dnf5 -y copr disable "$repo"
 done
 
+log "systemd servies"
+    systemctl disable network-online.target
+
 dnf5 clean all
