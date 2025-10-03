@@ -58,6 +58,8 @@ TERMINAL_APPS=(
     fish
     starship
     keychain
+    neovim
+    neovide
 ) 
 
 PODMAN_PKGS=(
