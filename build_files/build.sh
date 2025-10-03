@@ -122,6 +122,11 @@ FONTS_OTHERS=(
     rsms-inter-fonts
     gnome-themes-extra
     texlive-atkinson
+    qgnomeplatform-qt5
+    qgnomeplatform-qt6
+    breeze-gtk
+    gnome-shell
+    gnome-icon-theme
 )
 
 ASUS_PKGS=(
@@ -134,7 +139,6 @@ EXTRA_DE_PKGS=(
     #@cosmic-desktop
     #@cosmic-desktop-apps
     #@gnome-desktop
-    gnome-shell
 )
 
 FINGER_PRINT=(
