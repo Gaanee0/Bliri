@@ -25,6 +25,7 @@ COPR_REPOS=(
     lukenukem/asus-linux
     atim/starship
     ryanabx/cosmic-epoch
+    solopasha/hyprland
 )
 
 for repo in "${COPR_REPOS[@]}"; do
@@ -129,6 +130,10 @@ FONTS_OTHERS=(
     breeze-gtk
     gnome-shell
     gnome-icon-theme
+    nwg-look
+    gnome-tweaks
+    adw-gt3-theme
+    gnome-appearance-properties
 )
 
 ASUS_PKGS=(
