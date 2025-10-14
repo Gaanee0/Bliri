@@ -132,8 +132,6 @@ FONTS_OTHERS=(
     gnome-icon-theme
     nwg-look
     gnome-tweaks
-    adw-gt3-theme
-    gnome-appearance-properties
 )
 
 ASUS_PKGS=(
