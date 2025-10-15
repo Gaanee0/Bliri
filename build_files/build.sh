@@ -32,7 +32,7 @@ for repo in "${COPR_REPOS[@]}"; do
   dnf5 -y copr enable "$repo"
 done
 
-log "Enable terra & docker repositories..."
+log "Enable terra & cloudflare repositories..."
 dnf5 config-manager setopt terra.enabled=1 terra-extras.enabled=1
 dnf5 config-manager addrepo --from-repofile="https://pkg.cloudflare.com/cloudflared.repo"
 
