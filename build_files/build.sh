@@ -48,6 +48,7 @@ ADDITIONAL_APPS=(
     syncthing
     flatpak-builder
     ghostty
+    fuzzel
 )
 
 TERMINAL_APPS=(
