@@ -166,7 +166,7 @@ log "removing libfprint"
 dnf5 remove -y libfprint
 
 log "Installing packages using dnf5..."
-dnf5 install  --setopt=skip_if_installed=True --skip-unavailable --setopt=install_weak_deps=False -y \
+dnf5 install --setopt=install_weak_deps=False -y \
 ${ADDITIONAL_APPS[@]} \
 ${NIRI_PKGS[@]} \
 ${FONTS_OTHERS[@]} \
