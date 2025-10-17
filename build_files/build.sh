@@ -18,7 +18,6 @@ COPR_REPOS=(
     errornointernet/quickshell
     heus-sueh/packages
     gaanee/libfprint-elanmoc2
-    alternateved/cliphist
     lihaohong/yazi
     arrobbins/JDSP4Linux
     varlad/zellij
@@ -106,8 +105,12 @@ QUICK_SHELL=(
     gammastep
     qt6ct
     qt5ct
-    danklinux
-    dms-git
+    dms-greeter
+    dgop
+    hyprpicker
+    material-symbols-fonts
+    matugen
+    dms
 )
 
 FONTS_OTHERS=(
