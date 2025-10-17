@@ -26,6 +26,8 @@ COPR_REPOS=(
     atim/starship
     ryanabx/cosmic-epoch
     solopasha/hyprland
+    avengemedia/danklinux
+    avengemedia/dms-git
 )
 
 for repo in "${COPR_REPOS[@]}"; do
@@ -104,6 +106,8 @@ QUICK_SHELL=(
     gammastep
     qt6ct
     qt5ct
+    danklinux
+    dms-git
 )
 
 FONTS_OTHERS=(
