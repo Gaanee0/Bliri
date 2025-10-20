@@ -84,6 +84,7 @@ NIRI_PKGS=(
     cliphist
     wl-clipboard
     pavucontrol
+    wtype
 )
 
 QUICK_SHELL=(
