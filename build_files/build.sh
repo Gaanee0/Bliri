@@ -135,10 +135,10 @@ FONTS_OTHERS=(
     qgnomeplatform-qt5
     qgnomeplatform-qt6
     breeze-gtk
-    gnome-shell
     gnome-icon-theme
     nwg-look
     gnome-tweaks
+    adb-enhanced
 )
 
 ASUS_PKGS=(
@@ -149,6 +149,7 @@ ASUS_PKGS=(
 
 EXTRA_DE_PKGS=(
     @cosmic-desktop
+    gnome-shell
     #@cosmic-desktop-apps
     #@gnome-desktop
 )
