@@ -27,6 +27,7 @@ COPR_REPOS=(
     avengemedia/danklinux
     avengemedia/dms-git
     gaanee/libfprint-elanmoc2
+    meeuw/keyd
 )
 
 for repo in "${COPR_REPOS[@]}"; do
@@ -51,6 +52,7 @@ ADDITIONAL_APPS=(
     ghostty
     fuzzel
     greetd
+    keyd
 )
 
 TERMINAL_APPS=(
