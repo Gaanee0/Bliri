@@ -26,8 +26,8 @@ COPR_REPOS=(
     solopasha/hyprland
     avengemedia/danklinux
     avengemedia/dms-git
-    ntibbitts/Libfprint-Elanmoc2
-    #gaanee/libfprint-elanmoc2
+    #ntibbitts/Libfprint-Elanmoc2
+    gaanee/libfprint-elanmoc2
 )
 
 for repo in "${COPR_REPOS[@]}"; do
