@@ -26,8 +26,7 @@ COPR_REPOS=(
     solopasha/hyprland
     avengemedia/danklinux
     avengemedia/dms-git
-    ntibbitts/libfprint-elanmoc2
-    #gaanee/libfprint-elanmoc2
+    gaanee/libfprint-elanmoc2
 )
 
 for repo in "${COPR_REPOS[@]}"; do
@@ -51,7 +50,7 @@ ADDITIONAL_APPS=(
     flatpak-builder
     ghostty
     fuzzel
-    #greetd
+    greetd
 )
 
 TERMINAL_APPS=(
@@ -112,7 +111,7 @@ QUICK_SHELL=(
     material-symbols-fonts
     matugen
     dms
-    #dms-greeter
+    dms-greeter
     dgop
 )
 
@@ -127,7 +126,7 @@ FONTS_OTHERS=(
     google-noto-color-emoji-fonts
     jetbrains-mono-fonts
     wine-ms-sans-serif-fonts
-    #la-capitaine-cursor-theme
+    la-capitaine-cursor-theme
     gnome-icon-theme
     gnome-colors-icon-theme
     adwaita-icon-theme
