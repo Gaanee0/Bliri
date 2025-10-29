@@ -51,6 +51,7 @@ ADDITIONAL_APPS=(
     flatpak-builder
     ghostty
     fuzzel
+    greetd
 )
 
 TERMINAL_APPS=(
