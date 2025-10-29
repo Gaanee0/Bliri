@@ -111,7 +111,7 @@ QUICK_SHELL=(
     material-symbols-fonts
     matugen
     dms
-    #dms-greeter
+    dms-greeter
     dgop
 )
 
