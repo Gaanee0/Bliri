@@ -108,12 +108,12 @@ QUICK_SHELL=(
     gammastep
     qt6ct
     qt5ct
-    dms-greeter
-    dgop
     hyprpicker
     material-symbols-fonts
     matugen
     dms
+    #dms-greeter
+    dgop
 )
 
 FONTS_OTHERS=(
@@ -127,7 +127,7 @@ FONTS_OTHERS=(
     google-noto-color-emoji-fonts
     jetbrains-mono-fonts
     wine-ms-sans-serif-fonts
-    la-capitaine-cursor-theme
+    #la-capitaine-cursor-theme
     gnome-icon-theme
     gnome-colors-icon-theme
     adwaita-icon-theme
