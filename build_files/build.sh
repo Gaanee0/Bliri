@@ -17,7 +17,6 @@ COPR_REPOS=(
     yalter/niri
     errornointernet/quickshell
     heus-sueh/packages
-    gaanee/libfprint-elanmoc2
     lihaohong/yazi
     arrobbins/JDSP4Linux
     varlad/zellij
@@ -27,6 +26,8 @@ COPR_REPOS=(
     solopasha/hyprland
     avengemedia/danklinux
     avengemedia/dms-git
+    ntibbitts/Libfprint-Elanmoc2
+    #gaanee/libfprint-elanmoc2
 )
 
 for repo in "${COPR_REPOS[@]}"; do
