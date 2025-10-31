@@ -138,9 +138,9 @@ FONTS_OTHERS=(
     qgnomeplatform-qt6
     breeze-gtk
     gnome-icon-theme
-    nwg-look
     gnome-tweaks
     adb-enhanced
+    #nwg-look
     #la-capitaine-cursor-theme
 )
 
