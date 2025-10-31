@@ -15,7 +15,6 @@ COPR_REPOS=(
     tofik/sway
     ulysg/xwayland-satellite
     yalter/niri
-    #errornointernet/quickshell
     heus-sueh/packages
     lihaohong/yazi
     arrobbins/JDSP4Linux
@@ -27,6 +26,7 @@ COPR_REPOS=(
     avengemedia/danklinux
     avengemedia/dms-git
     gaanee/libfprint-elanmoc2
+    #errornointernet/quickshell
     #meeuw/keyd
 )
 
@@ -91,7 +91,7 @@ NIRI_PKGS=(
 )
 
 QUICK_SHELL=(
-    quickshell-git
+    #quickshell-git
     qt5-qtsvg
     gtk-murrine-engine
     qt6-qtsvg
