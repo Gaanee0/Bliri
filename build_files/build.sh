@@ -91,7 +91,7 @@ NIRI_PKGS=(
 )
 
 QUICK_SHELL=(
-    #quickshell-git
+    quickshell-git
     qt5-qtsvg
     gtk-murrine-engine
     qt6-qtsvg
