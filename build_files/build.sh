@@ -171,8 +171,8 @@ REMOVE_PKGS=(
     sunshine
 )
 
-log "removing libfprint" 
-dnf5 remove -y libfprint
+log "removing libfprint & quickshell-git" 
+dnf5 remove -y libfprint quickshell-git
 
 log "Installing packages using dnf5..."
 dnf5 install --setopt=install_weak_deps=False -y \
