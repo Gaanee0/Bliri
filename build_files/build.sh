@@ -22,12 +22,12 @@ COPR_REPOS=(
     lukenukem/asus-linux
     atim/starship
     ryanabx/cosmic-epoch
-    solopasha/hyprland
     avengemedia/danklinux
     avengemedia/dms-git
     gaanee/libfprint-elanmoc2
     #errornointernet/quickshell
     #meeuw/keyd
+    #solopasha/hyprland
 )
 
 for repo in "${COPR_REPOS[@]}"; do
@@ -91,7 +91,7 @@ NIRI_PKGS=(
 )
 
 QUICK_SHELL=(
-    quickshell-git
+    avengemedia/quickshell-git
     qt5-qtsvg
     gtk-murrine-engine
     qt6-qtsvg
