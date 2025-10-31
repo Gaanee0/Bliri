@@ -15,7 +15,7 @@ COPR_REPOS=(
     tofik/sway
     ulysg/xwayland-satellite
     yalter/niri
-    errornointernet/quickshell
+    #errornointernet/quickshell
     heus-sueh/packages
     lihaohong/yazi
     arrobbins/JDSP4Linux
@@ -27,7 +27,7 @@ COPR_REPOS=(
     avengemedia/danklinux
     avengemedia/dms-git
     gaanee/libfprint-elanmoc2
-    meeuw/keyd
+    #meeuw/keyd
 )
 
 for repo in "${COPR_REPOS[@]}"; do
@@ -51,8 +51,8 @@ ADDITIONAL_APPS=(
     flatpak-builder
     ghostty
     fuzzel
-    greetd
-    keyd
+    #greetd
+    #keyd
 )
 
 TERMINAL_APPS=(
@@ -113,8 +113,8 @@ QUICK_SHELL=(
     material-symbols-fonts
     matugen
     dms
-    #dms-greeter
     dgop
+    #dms-greeter
 )
 
 FONTS_OTHERS=(
@@ -128,7 +128,6 @@ FONTS_OTHERS=(
     google-noto-color-emoji-fonts
     jetbrains-mono-fonts
     wine-ms-sans-serif-fonts
-    #la-capitaine-cursor-theme
     gnome-icon-theme
     gnome-colors-icon-theme
     adwaita-icon-theme
@@ -142,6 +141,7 @@ FONTS_OTHERS=(
     nwg-look
     gnome-tweaks
     adb-enhanced
+    #la-capitaine-cursor-theme
 )
 
 ASUS_PKGS=(
@@ -168,6 +168,7 @@ REMOVE_PKGS=(
     kwrite
     gnome-disks
     gnome-disk-utility
+    sunshine
 )
 
 log "removing libfprint" 
