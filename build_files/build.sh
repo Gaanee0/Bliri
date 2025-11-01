@@ -22,8 +22,8 @@ COPR_REPOS=(
     lukenukem/asus-linux
     atim/starship
     avengemedia/danklinux
-    gaanee/libfprint-elanmoc2
     avengemedia/dms
+    gaanee/libfprint-elanmoc2
     #errornointernet/quickshell
     #avengemedia/dms-git
     #meeuw/keyd
@@ -115,6 +115,7 @@ QUICK_SHELL=(
     matugen
     dms
     dgop
+    dsearch
     #dms-greeter
     #quickshell-git
 )
