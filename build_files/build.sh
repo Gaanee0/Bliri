@@ -91,7 +91,7 @@ NIRI_PKGS=(
 )
 
 QUICK_SHELL=(
-    #quickshell-git
+    quickshell-git
     qt5-qtsvg
     gtk-murrine-engine
     qt6-qtsvg
@@ -169,7 +169,7 @@ REMOVE_PKGS=(
     gnome-disks
     gnome-disk-utility
     sunshine
-    quickshell-git
+    #quickshell-git
 )
 
 log "removing libfprint & quickshell-git" 
