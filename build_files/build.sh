@@ -169,6 +169,7 @@ REMOVE_PKGS=(
     gnome-disks
     gnome-disk-utility
     sunshine
+    quickshell-git
 )
 
 log "removing libfprint & quickshell-git" 
