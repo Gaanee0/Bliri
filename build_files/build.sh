@@ -21,13 +21,14 @@ COPR_REPOS=(
     varlad/zellij
     lukenukem/asus-linux
     atim/starship
-    ryanabx/cosmic-epoch
     avengemedia/danklinux
-    avengemedia/dms-git
     gaanee/libfprint-elanmoc2
+    avengemedia/dms
     #errornointernet/quickshell
+    #avengemedia/dms-git
     #meeuw/keyd
     #solopasha/hyprland
+    #ryanabx/cosmic-epoch
 )
 
 for repo in "${COPR_REPOS[@]}"; do
@@ -91,7 +92,7 @@ NIRI_PKGS=(
 )
 
 QUICK_SHELL=(
-    quickshell-git
+    quickshell
     qt5-qtsvg
     gtk-murrine-engine
     qt6-qtsvg
@@ -115,6 +116,7 @@ QUICK_SHELL=(
     dms
     dgop
     #dms-greeter
+    #quickshell-git
 )
 
 FONTS_OTHERS=(
