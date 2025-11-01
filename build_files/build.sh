@@ -172,8 +172,8 @@ REMOVE_PKGS=(
     #quickshell-git
 )
 
-log "removing libfprint & quickshell-git" 
-dnf5 remove -y libfprint quickshell-git
+log "removing libfprint" 
+dnf5 remove -y libfprint
 
 log "Installing packages using dnf5..."
 dnf5 install --setopt=install_weak_deps=False -y \
