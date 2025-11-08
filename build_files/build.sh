@@ -216,4 +216,4 @@ log "systemd servies"
     systemctl enable podman.socket
 
 dnf5 clean all
-
+#
