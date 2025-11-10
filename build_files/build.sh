@@ -111,6 +111,7 @@ QUICK_SHELL=(
     hyprpicker
     material-symbols-fonts
     matugen
+    wl-mirror
     dms
     dgop
     dsearch
