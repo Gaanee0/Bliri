@@ -215,8 +215,7 @@ log "systemd servies"
     dnf5 config-manager unsetopt cloudflared-stable.repo
     systemctl disable network-online.target
     systemctl enable podman.socket
-    systemctl disable sddm.service
-    systemctl enable greetd
+    #systemctl disable sddm.service
+    #systemctl enable greetd
 
 dnf5 clean all
-#
