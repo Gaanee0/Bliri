@@ -16,20 +16,20 @@ COPR_REPOS=(
     ulysg/xwayland-satellite
     yalter/niri
     heus-sueh/packages
-    lihaohong/yazi
     arrobbins/JDSP4Linux
-    varlad/zellij
     lukenukem/asus-linux
     atim/starship
     avengemedia/danklinux
-    gaanee/libfprint-elanmoc2
     avengemedia/dms-git
+    gaanee/libfprint-elanmoc2
+    #lihaohong/yazi
     #rankyn/input-remapper-git
     #errornointernet/quickshell
     #avengemedia/dms
     #meeuw/keyd
     #solopasha/hyprland
     #ryanabx/cosmic-epoch
+    #varlad/zellij
 )
 
 for repo in "${COPR_REPOS[@]}"; do
@@ -60,12 +60,12 @@ ADDITIONAL_APPS=(
 
 TERMINAL_APPS=(
     helix
-    yazi
-    zellij
     starship
     keychain
-    neovim
-    neovide
+    #yazi
+    #zellij
+    #neovim
+    #neovide
     #fish
 ) 
 
@@ -116,6 +116,7 @@ QUICK_SHELL=(
     dsearch
     dms-cli
     dms-greeter
+    #dcal
     #qt5-qtsvg
     #libass
     #qt6-qtsvg
@@ -211,9 +212,11 @@ for repo in "${COPR_REPOS[@]}"; do
 done
 
 log "systemd servies"
-    systemctl disable network-online.target
     dnf5 config-manager unsetopt cloudflared-stable.repo
+    systemctl disable network-online.target
     systemctl enable podman.socket
+    systemctl disable sddm.service
+    systemctl enable greetd
 
 dnf5 clean all
 #
