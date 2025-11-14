@@ -218,6 +218,5 @@ log "systemd servies"
     systemctl enable podman.socket
     #systemctl disable sddm.service
     #systemctl enable greetd
-    # 
 
 dnf5 clean all
