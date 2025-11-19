@@ -46,7 +46,6 @@ ADDITIONAL_APPS=(
     ntfs2btrfs
     JamesDSP
     syncthing
-    ghostty
     fuzzel
     greetd
     #input-remapper-git
@@ -56,6 +55,7 @@ ADDITIONAL_APPS=(
     #ntfs-3g
     #flatpak-builder
     #ntfs-3g-system-compression
+    #ghostty
 )
 
 TERMINAL_APPS=(
@@ -218,6 +218,5 @@ log "systemd servies"
     systemctl enable podman.socket
     #systemctl disable sddm.service
     #systemctl enable greetd
-    # 
 
 dnf5 clean all
