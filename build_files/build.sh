@@ -45,9 +45,9 @@ ADDITIONAL_APPS=(
     dislocker
     ntfs2btrfs
     JamesDSP
-    syncthing
     fuzzel
-    greetd
+    #syncthing
+    #greetd
     #input-remapper-git
     #keyd
     #fwupd
@@ -116,7 +116,7 @@ QUICK_SHELL=(
     dgop
     dsearch
     dms-cli
-    dms-greeter
+    #dms-greeter
     #dcal
     #qt5-qtsvg
     #libass
