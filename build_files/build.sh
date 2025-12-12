@@ -116,6 +116,7 @@ QUICK_SHELL=(
     dgop
     dsearch
     dms-cli
+    wayland-protocols-devel
     #dms-greeter
     #dcal
     #qt5-qtsvg
@@ -218,6 +219,5 @@ log "systemd servies"
     systemctl enable podman.socket
     #systemctl disable sddm.service
     #systemctl enable greetd
-    # 
 
 dnf5 clean all
