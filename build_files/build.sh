@@ -22,12 +22,12 @@ COPR_REPOS=(
     avengemedia/danklinux
     avengemedia/dms-git
     gaanee/libfprint-elanmoc2
+    solopasha/hyprland
     #lihaohong/yazi
     #rankyn/input-remapper-git
     #errornointernet/quickshell
     #avengemedia/dms
     #meeuw/keyd
-    #solopasha/hyprland
     #ryanabx/cosmic-epoch
     #varlad/zellij
 )
