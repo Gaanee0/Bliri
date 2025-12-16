@@ -37,7 +37,7 @@ for repo in "${COPR_REPOS[@]}"; do
 done
 
 log "Enable terra repositories..."
-dnf5 config-manager setopt terra.enabled=1 terra-extras.enabled=1
+dnf5 config-manager setopt terra.enabled=1 terra-extras.enabled=1 terra.exclude=matugen
 
 ADDITIONAL_APPS=(
     testdisk
@@ -100,8 +100,7 @@ NIRI_PKGS=(
 QUICK_SHELL=(
     quickshell-git
     gtk-murrine-engine
-    #dms/matugen
-    dms-git/matugen
+    matugen
     sassc
     cava
     go
