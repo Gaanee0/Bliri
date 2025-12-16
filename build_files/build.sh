@@ -100,7 +100,8 @@ NIRI_PKGS=(
 QUICK_SHELL=(
     quickshell-git
     gtk-murrine-engine
-    dms/matugen
+    #dms/matugen
+    dms-git/matugen
     sassc
     cava
     go
