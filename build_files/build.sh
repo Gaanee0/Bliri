@@ -100,7 +100,7 @@ NIRI_PKGS=(
 QUICK_SHELL=(
     quickshell-git
     gtk-murrine-engine
-    matugen
+    dms/matugen
     sassc
     cava
     go
@@ -110,7 +110,6 @@ QUICK_SHELL=(
     qt5ct
     hyprpicker
     material-symbols-fonts
-    matugen
     wl-mirror
     dms
     dgop
