@@ -220,3 +220,4 @@ log "systemd servies"
     #systemctl enable greetd
 
 dnf5 clean all
+#
