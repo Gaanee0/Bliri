@@ -44,6 +44,7 @@ ADDITIONAL_APPS=(
     kde-partitionmanager
     dislocker
     ntfs2btrfs
+    gvfs-fuse
     JamesDSP
     fuzzel
     #syncthing
@@ -67,7 +68,7 @@ TERMINAL_APPS=(
     #neovim
     #neovide
     #fish
-) 
+)
 
 PODMAN_PKGS=(
     dialog
@@ -184,7 +185,7 @@ REMOVE_PKGS=(
     #gnome-disks
 )
 
-log "removing to reinstall" 
+log "removing to reinstall"
 dnf5 remove -y libfprint
 
 log "Installing packages using dnf5..."
@@ -220,4 +221,3 @@ log "systemd servies"
     #systemctl enable greetd
 
 dnf5 clean all
-#
