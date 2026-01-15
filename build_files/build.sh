@@ -45,9 +45,9 @@ ADDITIONAL_APPS=(
     dislocker
     ntfs2btrfs
     gvfs-fuse
-    JamesDSP
     fuzzel
     #syncthing
+    #JamesDSP
     #greetd
     #input-remapper-git
     #keyd
@@ -80,16 +80,16 @@ PODMAN_PKGS=(
 NIRI_PKGS=(
     niri
     alacritty
-    brightnessctl
     xwayland-satellite
     gnome-keyring
     xdg-desktop-portal-gnome
     mate-polkit
-    cliphist
-    pavucontrol
-    wtype
     swaybg
     #swww
+    #pavucontrol
+    #brightnessctl
+    #wtype
+    #cliphist
     #lz4
     #gifsicle
     #dav1d
@@ -109,16 +109,16 @@ QUICK_SHELL=(
     gammastep
     qt6ct
     qt5ct
-    hyprpicker
     material-symbols-fonts
-    wl-mirror
     dms
     dgop
     dsearch
     dms-cli
-    wayland-protocols-devel
+    #wayland-protocols-devel
+    #wl-mirror
     #dms-greeter
     #dcal
+    #hyprpicker
     #qt5-qtsvg
     #libass
     #qt6-qtsvg
@@ -141,14 +141,15 @@ FONTS_OTHERS=(
     gnome-colors-icon-theme
     rsms-inter-fonts
     gnome-themes-extra
-    texlive-atkinson
     qgnomeplatform-qt5
     qgnomeplatform-qt6
     breeze-gtk
     gnome-icon-theme
-    gnome-tweaks
     adb-enhanced
+    #adw-gtk3-theme
     #nwg-look
+    #texlive-atkinson
+    #gnome-tweaks
     #adwaita-icon-theme
     #la-capitaine-cursor-theme
     #fira-code-fonts
@@ -181,7 +182,7 @@ REMOVE_PKGS=(
     tmux
     kwrite
     gnome-disk-utility
-    #Sunshine
+    Sunshine
     #gnome-disks
 )
 
