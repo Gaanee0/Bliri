@@ -12,17 +12,17 @@ log() {
 
 log "Enable COPR repos...."
 COPR_REPOS=(
-    tofik/sway
-    ulysg/xwayland-satellite
     yalter/niri
-    heus-sueh/packages
-    arrobbins/JDSP4Linux
     lukenukem/asus-linux
-    atim/starship
     avengemedia/danklinux
     avengemedia/dms-git
     gaanee/libfprint-elanmoc2
-    solopasha/hyprland
+    #ulysg/xwayland-satellite
+    #heus-sueh/packages
+    #solopasha/hyprland
+    #tofik/sway
+    #atim/starship
+    #arrobbins/JDSP4Linux
     #lihaohong/yazi
     #rankyn/input-remapper-git
     #errornointernet/quickshell
@@ -45,8 +45,9 @@ ADDITIONAL_APPS=(
     dislocker
     ntfs2btrfs
     gvfs-fuse
-    fuzzel
+    adb-enhanced
     #syncthing
+    #fuzzel
     #JamesDSP
     #greetd
     #input-remapper-git
@@ -61,8 +62,8 @@ ADDITIONAL_APPS=(
 
 TERMINAL_APPS=(
     helix
-    starship
-    keychain
+    #starship
+    #keychain
     #yazi
     #zellij
     #neovim
@@ -82,9 +83,9 @@ NIRI_PKGS=(
     alacritty
     xwayland-satellite
     xdg-desktop-portal-gnome
-    mate-polkit
     swaybg
     #swww
+    #mate-polkit
     #gnome-keyring
     #pavucontrol
     #brightnessctl
@@ -100,7 +101,6 @@ NIRI_PKGS=(
 
 QUICK_SHELL=(
     quickshell-git
-    gtk-murrine-engine
     matugen
     sassc
     cava
@@ -109,12 +109,12 @@ QUICK_SHELL=(
     gammastep
     qt6ct
     qt5ct
-    material-symbols-fonts
     dms
     dgop
     dsearch
     dms-cli
     #wayland-protocols-devel
+    #gtk-murrine-engine
     #wl-mirror
     #dms-greeter
     #dcal
@@ -133,6 +133,7 @@ QUICK_SHELL=(
 
 FONTS_OTHERS=(
     material-icons-fonts
+    material-symbols-fonts
     fontawesome-fonts-all
     adobe-source-code-pro-fonts
     jetbrains-mono-fonts
@@ -145,7 +146,6 @@ FONTS_OTHERS=(
     qgnomeplatform-qt6
     breeze-gtk
     gnome-icon-theme
-    adb-enhanced
     #adw-gtk3-theme
     #nwg-look
     #texlive-atkinson
