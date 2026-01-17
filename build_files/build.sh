@@ -81,11 +81,11 @@ NIRI_PKGS=(
     niri
     alacritty
     xwayland-satellite
-    gnome-keyring
     xdg-desktop-portal-gnome
     mate-polkit
     swaybg
     #swww
+    #gnome-keyring
     #pavucontrol
     #brightnessctl
     #wtype
