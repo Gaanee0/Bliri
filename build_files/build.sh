@@ -132,22 +132,21 @@ QUICK_SHELL=(
 )
 
 FONTS_OTHERS=(
-    material-icons-fonts
+    adw-gtk3-theme
+    nwg-look
     material-symbols-fonts
-    fontawesome-fonts-all
-    adobe-source-code-pro-fonts
-    jetbrains-mono-fonts
-    wine-ms-sans-serif-fonts
-    gnome-icon-theme
-    gnome-colors-icon-theme
     rsms-inter-fonts
-    gnome-themes-extra
     qgnomeplatform-qt5
     qgnomeplatform-qt6
-    breeze-gtk
-    gnome-icon-theme
-    #adw-gtk3-theme
-    #nwg-look
+    fontawesome-fonts-all
+    jetbrains-mono-fonts
+    wine-ms-sans-serif-fonts
+    #material-icons-fonts
+    #gnome-icon-theme
+    #gnome-themes-extra
+    #gnome-colors-icon-theme
+    #adobe-source-code-pro-fonts
+    #breeze-gtk
     #texlive-atkinson
     #gnome-tweaks
     #adwaita-icon-theme
@@ -161,7 +160,7 @@ FONTS_OTHERS=(
 
 ASUS_PKGS=(
     asusctl
-    asusctl-rog-gui
+    #asusctl-rog-gui
     #supergfxctl
 )
 
