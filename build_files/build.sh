@@ -102,7 +102,6 @@ NIRI_PKGS=(
 QUICK_SHELL=(
     quickshell-git
     matugen
-    sassc
     cava
     go
     golang
@@ -113,6 +112,7 @@ QUICK_SHELL=(
     dgop
     dsearch
     dms-cli
+    #sassc
     #wayland-protocols-devel
     #gtk-murrine-engine
     #wl-mirror
