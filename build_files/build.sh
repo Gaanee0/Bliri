@@ -35,7 +35,6 @@ echo "priority=3" | tee -a /etc/yum.repos.d/_copr:copr.fedorainfracloud.org:aven
 dnf5 -y config-manager setopt "*terra*".priority=4 terra.enabled=1 terra-extras.enabled=1 terra.exclude="matugen nerd-fonts"
 
 ADDITIONAL_PKGS=(
-    testdisk
     kde-partitionmanager
     dislocker
     ntfs2btrfs
@@ -43,9 +42,7 @@ ADDITIONAL_PKGS=(
     adb-enhanced
     asusctl
     helix
-    dialog
     nmap-ncat
-    podman-compose
 )
 
 NIRI_PKGS=(
