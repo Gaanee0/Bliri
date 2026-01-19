@@ -24,11 +24,6 @@ for repo in "${COPR_REPOS[@]}"; do
 done
 
 log "Adding repos & Optimizing build time..."
-mkdir -p /var/roothome
-dnf5 -y install dnf5-plugins
-echo -n "max_parallel_downloads=10" >>/etc/dnf/dnf.conf
-RELEASE=$(rpm -E %fedora)
-
 echo "priority=1" | tee -a /etc/yum.repos.d/_copr:copr.fedorainfracloud.org:yalter:niri.repo
 echo "priority=2" | tee -a /etc/yum.repos.d/_copr:copr.fedorainfracloud.org:ulysg:xwayland-satellite.repo
 echo "priority=3" | tee -a /etc/yum.repos.d/_copr:copr.fedorainfracloud.org:avengemedia:danklinux.repo
