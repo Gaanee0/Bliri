@@ -46,8 +46,6 @@ ADDITIONAL_PKGS=(
     dialog
     nmap-ncat
     podman-compose
-    nix
-    nix-daemon
 )
 
 NIRI_PKGS=(
