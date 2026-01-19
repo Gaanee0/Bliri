@@ -96,7 +96,7 @@ dnf5 remove -y libfprint
 
 log "Installing packages using dnf5..."
 dnf5 install --setopt=install_weak_deps=False -y \
-${ADDITIONAL_APPS[@]} \
+${ADDITIONAL_PKGS[@]} \
 ${NIRI_PKGS[@]} \
 ${FONTS[@]} \
 ${FINGER_PRINT[@]}
