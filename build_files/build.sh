@@ -41,7 +41,6 @@ ADDITIONAL_PKGS=(
     gvfs-fuse
     adb-enhanced
     asusctl
-    helix
 )
 
 NIRI_PKGS=(
