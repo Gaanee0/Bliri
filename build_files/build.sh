@@ -42,7 +42,6 @@ ADDITIONAL_PKGS=(
     adb-enhanced
     asusctl
     helix
-    nmap-ncat
 )
 
 NIRI_PKGS=(
