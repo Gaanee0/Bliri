@@ -78,7 +78,6 @@ REMOVE_PKGS=(
     tmux
     kwrite
     gnome-disk-utility
-    Sunshine
 )
 
 log "removing to reinstall"
