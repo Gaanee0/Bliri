@@ -17,6 +17,8 @@ COPR_REPOS=(
     avengemedia/danklinux
     avengemedia/dms-git
     gaanee/libfprint-elanmoc2
+    deltacopy/darkly
+    faugus/faugus-launcher
 )
 
 for repo in "${COPR_REPOS[@]}"; do
@@ -36,6 +38,7 @@ ADDITIONAL_PKGS=(
     gvfs-fuse
     adb-enhanced
     asusctl
+    faugus-launcher
 )
 
 NIRI_PKGS=(
@@ -56,6 +59,7 @@ NIRI_PKGS=(
     dms-cli
     adw-gtk3-theme
     nwg-look
+    darkly
 )
 
 FONTS=(
@@ -78,6 +82,8 @@ REMOVE_PKGS=(
     tmux
     kwrite
     gnome-disk-utility
+    sunshine
+    lutris
 )
 
 log "removing to reinstall"
@@ -101,4 +107,3 @@ done
 
 log "cleaning system"
 dnf5 clean all
-#
