@@ -82,7 +82,7 @@ REMOVE_PKGS=(
     tmux
     kwrite
     gnome-disk-utility
-    sunshine
+    Sunshine
     lutris
 )
 
