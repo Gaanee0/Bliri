@@ -10,7 +10,7 @@ log() {
   echo "=== $* ==="
 }
 
-log "Enable COPR repos...."
+log "Enable COPR repos..."
 COPR_REPOS=(
     yalter/niri
     ulysg/xwayland-satellite
