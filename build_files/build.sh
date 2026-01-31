@@ -19,6 +19,7 @@ COPR_REPOS=(
     gaanee/libfprint-elanmoc2
     deltacopy/darkly
     faugus/faugus-launcher
+    solopasha/hyprland
 )
 
 for repo in "${COPR_REPOS[@]}"; do
