@@ -1,8 +1,8 @@
 FROM scratch AS ctx
 COPY build_files /
-COPY system_files /files
 
-FROM ghcr.io/ublue-os/bazzite-dx-nvidia:latest
+FROM ghcr.io/ublue-os/bazzite-dx-nvidia:latest as bliri
+COPY system_files /
 
 RUN rm /opt && mkdir /opt
 
