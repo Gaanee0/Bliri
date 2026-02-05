@@ -43,7 +43,7 @@ ADDITIONAL_PKGS=(
 )
 
 NIRI_PKGS=(
-    niri-git
+    niri
     xwayland-satellite
     xdg-desktop-portal-gnome
     alacritty
