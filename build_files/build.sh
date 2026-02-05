@@ -12,7 +12,7 @@ log() {
 
 log "Enable COPR repos..."
 COPR_REPOS=(
-    yalter/niri
+    yalter/niri-git
     ulysg/xwayland-satellite
     avengemedia/danklinux
     avengemedia/dms-git
@@ -27,7 +27,7 @@ for repo in "${COPR_REPOS[@]}"; do
 done
 
 log "Adding repos & Optimizing build time..."
-echo "priority=1" | tee -a /etc/yum.repos.d/_copr:copr.fedorainfracloud.org:yalter:niri.repo
+echo "priority=1" | tee -a /etc/yum.repos.d/_copr:copr.fedorainfracloud.org:yalter:niri-git.repo
 echo "priority=2" | tee -a /etc/yum.repos.d/_copr:copr.fedorainfracloud.org:ulysg:xwayland-satellite.repo
 echo "priority=3" | tee -a /etc/yum.repos.d/_copr:copr.fedorainfracloud.org:avengemedia:danklinux.repo
 dnf5 -y config-manager setopt "*terra*".priority=4 terra.enabled=1 terra-extras.enabled=1 terra.exclude="matugen"
@@ -43,7 +43,7 @@ ADDITIONAL_PKGS=(
 )
 
 NIRI_PKGS=(
-    niri
+    niri-git
     xwayland-satellite
     xdg-desktop-portal-gnome
     alacritty
