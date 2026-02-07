@@ -40,6 +40,8 @@ ADDITIONAL_PKGS=(
     adb-enhanced
     asusctl
     faugus-launcher
+    liquidctl
+    coolercontrol
 )
 
 NIRI_PKGS=(
