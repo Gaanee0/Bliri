@@ -21,6 +21,7 @@ COPR_REPOS=(
     faugus/faugus-launcher
     solopasha/hyprland
     zirconium/packages
+    jcrd/clight
 )
 
 for repo in "${COPR_REPOS[@]}"; do
