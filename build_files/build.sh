@@ -75,6 +75,7 @@ FONTS=(
     fontawesome-fonts-all
     jetbrains-mono-fonts
     wine-ms-sans-serif-fonts
+    papirus-icon-theme
 )
 
 FINGER_PRINT=(
