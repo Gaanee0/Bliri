@@ -20,6 +20,7 @@ COPR_REPOS=(
     deltacopy/darkly
     faugus/faugus-launcher
     solopasha/hyprland
+    zirconium/packages
 )
 
 for repo in "${COPR_REPOS[@]}"; do
@@ -46,6 +47,7 @@ ADDITIONAL_PKGS=(
 
 NIRI_PKGS=(
     niri
+    iio-niri
     xwayland-satellite
     xdg-desktop-portal-gnome
     alacritty
@@ -109,4 +111,9 @@ for repo in "${COPR_REPOS[@]}"; do
 done
 
 log "cleaning system"
+rm -rvf /usr/share/wayland-sessions/gamescope-session-steam.desktop
+rm -rvf /usr/share/wayland-sessions/gamescope-session-steam.desktop
+rm -rvf /usr/share/wayland-sessions/gamescope-session.desktop
+rm -rvf /usr/share/wayland-sessions/plasma-steamos-wayland-oneshot.desktop
+rm -rvf /usr/share/xsessions/plasma-steamos-oneshot.desktop
 dnf5 clean all
