@@ -66,6 +66,7 @@ NIRI_PKGS=(
     adw-gtk3-theme
     nwg-look
     darkly
+    gsl
     clight
 )
 
