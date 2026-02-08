@@ -21,7 +21,6 @@ COPR_REPOS=(
     faugus/faugus-launcher
     solopasha/hyprland
     zirconium/packages
-    jcrd/clight
 )
 
 for repo in "${COPR_REPOS[@]}"; do
@@ -66,8 +65,6 @@ NIRI_PKGS=(
     adw-gtk3-theme
     nwg-look
     darkly
-    gsl
-    clight
 )
 
 FONTS=(
