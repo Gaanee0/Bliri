@@ -115,3 +115,4 @@ rm -rvf /usr/share/wayland-sessions/gamescope-session.desktop
 rm -rvf /usr/share/wayland-sessions/plasma-steamos-wayland-oneshot.desktop
 rm -rvf /usr/share/xsessions/plasma-steamos-oneshot.desktop
 dnf5 clean all
+#
