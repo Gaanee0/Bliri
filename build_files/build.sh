@@ -65,6 +65,7 @@ NIRI_PKGS=(
     nwg-look
     darkly
     mpv
+    mpv-libs
 )
 
 FONTS=(
