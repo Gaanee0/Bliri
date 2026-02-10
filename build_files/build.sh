@@ -47,7 +47,7 @@ ADDITIONAL_PKGS=(
 
 NIRI_PKGS=(
     niri
-    iio-niri
+    swaybg
     xwayland-satellite
     xdg-desktop-portal-gnome
     alacritty
@@ -64,8 +64,6 @@ NIRI_PKGS=(
     adw-gtk3-theme
     nwg-look
     darkly
-    mpv
-    mpv-libs
 )
 
 FONTS=(
