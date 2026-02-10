@@ -18,7 +18,6 @@ COPR_REPOS=(
     avengemedia/dms-git
     gaanee/libfprint-elanmoc2
     deltacopy/darkly
-    faugus/faugus-launcher
     solopasha/hyprland
     zirconium/packages
 )
@@ -40,7 +39,6 @@ ADDITIONAL_PKGS=(
     gvfs-fuse
     adb-enhanced
     asusctl
-    faugus-launcher
     liquidctl
     coolercontrol
 )
@@ -85,7 +83,7 @@ FINGER_PRINT=(
 
 REMOVE_PKGS=(
     tmux
-    kwrite
+    kate
     gnome-disk-utility
     Sunshine
     lutris
