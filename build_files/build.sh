@@ -52,7 +52,6 @@ NIRI_PKGS=(
     xdg-desktop-portal-gnome
     alacritty
     quickshell-git
-    swaybg
     matugen
     cava
     gammastep
