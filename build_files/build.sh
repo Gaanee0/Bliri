@@ -20,6 +20,7 @@ COPR_REPOS=(
     deltacopy/darkly
     solopasha/hyprland
     zirconium/packages
+    faugus/faugus-launcher
 )
 
 for repo in "${COPR_REPOS[@]}"; do
@@ -41,6 +42,7 @@ ADDITIONAL_PKGS=(
     asusctl
     liquidctl
     coolercontrol
+    faugus-launcher
 )
 
 NIRI_PKGS=(
@@ -85,7 +87,6 @@ REMOVE_PKGS=(
     tmux
     kate
     gnome-disk-utility
-    Sunshine
     lutris
 )
 
