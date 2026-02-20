@@ -41,9 +41,7 @@ ADDITIONAL_PKGS=(
     coolercontrol
     kwallet
     pam-kwallet
-    kf5-kwallet
     kf6-kwallet
-    vlc-plugin-kde
 )
 
 NIRI_PKGS=(
