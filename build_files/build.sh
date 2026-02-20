@@ -42,7 +42,6 @@ ADDITIONAL_PKGS=(
     asusctl
     liquidctl
     coolercontrol
-    faugus-launcher
 )
 
 NIRI_PKGS=(
@@ -89,7 +88,6 @@ REMOVE_PKGS=(
     tmux
     kate
     gnome-disk-utility
-    lutris
 )
 
 log "removing to reinstall"
