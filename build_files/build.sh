@@ -65,6 +65,8 @@ NIRI_PKGS=(
     darkly
     khal
     cups-pk-helper
+    foot
+    kitty
 )
 
 FONTS=(
