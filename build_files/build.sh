@@ -39,9 +39,6 @@ ADDITIONAL_PKGS=(
     asusctl
     liquidctl
     coolercontrol
-    kwallet
-    pam-kwallet
-    kf6-kwallet
 )
 
 NIRI_PKGS=(
