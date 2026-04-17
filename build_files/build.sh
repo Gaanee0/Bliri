@@ -26,6 +26,7 @@ for repo in "${COPR_REPOS[@]}"; do
 done
 
 log "Adding repos & Optimizing build time..."
+dnf5 -y install --nogpgcheck https://repo.fyralabs.com/terra$(rmp -E %fedora)/terra.repo
 echo "priority=1" | tee -a /etc/yum.repos.d/_copr:copr.fedorainfracloud.org:yalter:niri-git.repo
 echo "priority=2" | tee -a /etc/yum.repos.d/_copr:copr.fedorainfracloud.org:ulysg:xwayland-satellite.repo
 echo "priority=3" | tee -a /etc/yum.repos.d/_copr:copr.fedorainfracloud.org:avengemedia:danklinux.repo
