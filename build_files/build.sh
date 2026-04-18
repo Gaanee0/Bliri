@@ -29,21 +29,16 @@ log "Adding repos & Optimizing build time..."
 dnf5 install -y --nogpgcheck \
   --repofrompath 'terra,https://repos.fyralabs.com/terra$releasever' \
   terra-release
-dnf5 install -y terra-release-extras
 echo "priority=1" | tee -a /etc/yum.repos.d/_copr:copr.fedorainfracloud.org:yalter:niri-git.repo
 echo "priority=2" | tee -a /etc/yum.repos.d/_copr:copr.fedorainfracloud.org:ulysg:xwayland-satellite.repo
 echo "priority=3" | tee -a /etc/yum.repos.d/_copr:copr.fedorainfracloud.org:avengemedia:danklinux.repo
-dnf5 -y config-manager setopt "*terra*".priority=4 terra.enabled=1 terra-extras.enabled=1 terra.exclude="matugen ghostty"
+dnf5 -y config-manager setopt "*terra*".priority=4 terra.enabled=1 terra.exclude="matugen ghostty"
 
 ADDITIONAL_PKGS=(
-  kde-partitionmanager
   dislocker
   ntfs2btrfs
-  gvfs-fuse
   adb-enhanced
   asusctl
-  liquidctl
-  coolercontrol
 )
 
 NIRI_PKGS=(
@@ -59,7 +54,6 @@ NIRI_PKGS=(
   qt5ct
   dms
   dgop
-  dsearch
   dms-cli
   adw-gtk3-theme
   nwg-look
@@ -87,7 +81,6 @@ FINGER_PRINT=(
 REMOVE_PKGS=(
   tmux
   kwrite
-  gnome-disk-utility
 )
 
 log "removing to reinstall"
@@ -113,9 +106,4 @@ for repo in "${COPR_REPOS[@]}"; do
 done
 
 log "cleaning system"
-rm -rvf /usr/share/wayland-sessions/gamescope-session-steam.desktop
-rm -rvf /usr/share/wayland-sessions/gamescope-session-steam.desktop
-rm -rvf /usr/share/wayland-sessions/gamescope-session.desktop
-rm -rvf /usr/share/wayland-sessions/plasma-steamos-wayland-oneshot.desktop
-rm -rvf /usr/share/xsessions/plasma-steamos-oneshot.desktop
 dnf5 clean all
