@@ -26,7 +26,10 @@ for repo in "${COPR_REPOS[@]}"; do
 done
 
 log "Adding repos & Optimizing build time..."
-dnf5 -y install --nogpgcheck https://repo.fyralabs.com/terra$(rmp -E %fedora)/terra.repo
+dnf5 install -y --nogpgcheck \
+  --repofrompath 'terra,https://repos.fyralabs.com/terra$releasever' \
+  terra-release
+dnf5 install -y terra-release-extras
 echo "priority=1" | tee -a /etc/yum.repos.d/_copr:copr.fedorainfracloud.org:yalter:niri-git.repo
 echo "priority=2" | tee -a /etc/yum.repos.d/_copr:copr.fedorainfracloud.org:ulysg:xwayland-satellite.repo
 echo "priority=3" | tee -a /etc/yum.repos.d/_copr:copr.fedorainfracloud.org:avengemedia:danklinux.repo
@@ -48,7 +51,6 @@ NIRI_PKGS=(
   swaybg
   xwayland-satellite
   xdg-desktop-portal-gnome
-  alacritty
   quickshell-git
   matugen
   cava
@@ -62,8 +64,6 @@ NIRI_PKGS=(
   adw-gtk3-theme
   nwg-look
   darkly
-  khal
-  cups-pk-helper
   ghostty
 )
 
@@ -86,7 +86,7 @@ FINGER_PRINT=(
 
 REMOVE_PKGS=(
   tmux
-  kate
+  kwrite
   gnome-disk-utility
 )
 
@@ -105,6 +105,9 @@ dnf5 remove -y \
   ${REMOVE_PKGS[@]}
 
 log "Disable Copr repos to get rid of clutter..."
+for i in /etc/yum.repos.d/terra*.repo; do
+  sed -i 's/enabled=1/enabled=0/g' "$i"
+done
 for repo in "${COPR_REPOS[@]}"; do
   dnf5 -y copr disable "$repo"
 done
