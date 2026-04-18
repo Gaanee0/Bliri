@@ -30,9 +30,10 @@ dnf5 install -y --nogpgcheck \
   --repofrompath 'terra,https://repos.fyralabs.com/terra$releasever' \
   terra-release
 echo "priority=1" | tee -a /etc/yum.repos.d/_copr:copr.fedorainfracloud.org:yalter:niri-git.repo
-echo "priority=2" | tee -a /etc/yum.repos.d/_copr:copr.fedorainfracloud.org:ulysg:xwayland-satellite.repo
-echo "priority=3" | tee -a /etc/yum.repos.d/_copr:copr.fedorainfracloud.org:avengemedia:danklinux.repo
-dnf5 -y config-manager setopt "*terra*".priority=4 terra.enabled=1 terra.exclude="matugen ghostty"
+echo "priority=1" | tee -a /etc/yum.repos.d/_copr:copr.fedorainfracloud.org:ulysg:xwayland-satellite.repo
+echo "priority=1" | tee -a /etc/yum.repos.d/_copr:copr.fedorainfracloud.org:scottames:ghostty.repo
+echo "priority=2" | tee -a /etc/yum.repos.d/_copr:copr.fedorainfracloud.org:avengemedia:danklinux.repo
+dnf5 -y config-manager setopt "*terra*".priority=3 terra.enabled=1
 
 ADDITIONAL_PKGS=(
   dislocker
@@ -63,12 +64,9 @@ NIRI_PKGS=(
 
 FONTS=(
   material-symbols-fonts
-  rsms-inter-fonts
   qgnomeplatform-qt5
   qgnomeplatform-qt6
-  fontawesome-fonts-all
   jetbrains-mono-fonts
-  wine-ms-sans-serif-fonts
   papirus-icon-theme
 )
 
