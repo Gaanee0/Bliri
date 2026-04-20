@@ -1,7 +1,7 @@
 FROM scratch AS ctx
 COPY build_files /
 
-FROM ghcr.io/ublue-os/aurora-dx-nvidia-open:latest
+FROM ghcr.io/ublue-os/aurora-dx-nvidia-open:beta
 COPY system_files /
 
 RUN rm /opt && mkdir /opt
