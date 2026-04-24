@@ -40,6 +40,7 @@ ADDITIONAL_PKGS=(
   ntfs2btrfs
   adb-enhanced
   asusctl
+  topgrade
 )
 
 NIRI_PKGS=(
