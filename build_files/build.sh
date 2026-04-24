@@ -41,7 +41,6 @@ ADDITIONAL_PKGS=(
   adb-enhanced
   asusctl
   topgrade
-  fwupd
 )
 
 NIRI_PKGS=(
