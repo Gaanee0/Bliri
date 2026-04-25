@@ -61,6 +61,7 @@ NIRI_PKGS=(
   darkly
   ghostty
   foot
+  foot-terminfo
 )
 
 FONTS=(
