@@ -60,6 +60,7 @@ NIRI_PKGS=(
   nwg-look
   darkly
   ghostty
+  foot
 )
 
 FONTS=(
