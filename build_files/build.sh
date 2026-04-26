@@ -42,7 +42,6 @@ ADDITIONAL_PKGS=(
 
 NIRI_PKGS=(
   niri
-  swaybg
   xwayland-satellite
   xdg-desktop-portal-gnome
   quickshell-git
