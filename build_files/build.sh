@@ -62,8 +62,6 @@ NIRI_PKGS=(
 
 FONTS=(
   material-symbols-fonts
-  qgnomeplatform-qt5
-  qgnomeplatform-qt6
   papirus-icon-theme
 )
 
