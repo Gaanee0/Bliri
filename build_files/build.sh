@@ -18,6 +18,7 @@ COPR_REPOS=(
   avengemedia/dms-git
   gaanee/libfprint-elanmoc2
   deltacopy/darkly
+  scottames/ghostty
 )
 
 for repo in "${COPR_REPOS[@]}"; do
@@ -30,6 +31,7 @@ dnf5 install -y --nogpgcheck \
   terra-release
 echo "priority=1" | tee -a /etc/yum.repos.d/_copr:copr.fedorainfracloud.org:yalter:niri-git.repo
 echo "priority=1" | tee -a /etc/yum.repos.d/_copr:copr.fedorainfracloud.org:ulysg:xwayland-satellite.repo
+echo "priority=1" | tee -a /etc/yum.repos.d/_copr:copr.fedorainfracloud.org:scottames:ghostty.repo
 echo "priority=2" | tee -a /etc/yum.repos.d/_copr:copr.fedorainfracloud.org:avengemedia:danklinux.repo
 dnf5 -y config-manager setopt "*terra*".priority=3 terra.enabled=1
 
@@ -56,6 +58,7 @@ NIRI_PKGS=(
   adw-gtk3-theme
   nwg-look
   darkly
+  ghostty
   foot
   foot-terminfo
 )
