@@ -101,13 +101,13 @@ log "Removing packages from dependcies"
 dnf5 remove -y \
   ${REMOVE_PKGS[@]}
 
-log "Disable Copr repos to get rid of clutter..."
-for i in /etc/yum.repos.d/terra*.repo; do
-  sed -i 's/enabled=1/enabled=0/g' "$i"
-done
-for repo in "${COPR_REPOS[@]}"; do
-  dnf5 -y copr disable "$repo"
-done
+# log "Disable Copr repos to get rid of clutter..."
+# for i in /etc/yum.repos.d/terra*.repo; do
+#   sed -i 's/enabled=1/enabled=0/g' "$i"
+# done
+# for repo in "${COPR_REPOS[@]}"; do
+#   dnf5 -y copr disable "$repo"
+# done
 
 log "cleaning system"
 dnf5 clean all
