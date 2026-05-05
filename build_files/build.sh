@@ -46,8 +46,6 @@ NIRI_PKGS=(
   xdg-desktop-portal-gnome
   quickshell-git
   matugen
-  cava
-  gammastep
   qt6ct
   qt5ct
   dms
@@ -74,6 +72,8 @@ FINGER_PRINT=(
 REMOVE_PKGS=(
   tmux
   kwrite
+  kate
+  Sunshine
 )
 
 log "removing to reinstall"
