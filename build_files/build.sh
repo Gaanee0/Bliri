@@ -61,6 +61,11 @@ NIRI_PKGS=(
   foot
   foot-terminfo
   ghostty
+  ghostty-kio
+  ghostty-terminfo
+  ghostty-zsh-completion
+  ghostty-vim
+  ghostty-shell-inegration
   cups-pk-helper
   dsearch
 )
