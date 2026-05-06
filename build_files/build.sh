@@ -67,6 +67,7 @@ NIRI_PKGS=(
   ghostty-shell-integration
   cups-pk-helper
   dsearch
+  cups-pk-helper
 )
 
 FONTS=(
@@ -85,6 +86,7 @@ REMOVE_PKGS=(
   kwrite
   kate
   Sunshine
+  kwaletmanager5
 )
 
 log "removing to reinstall"
