@@ -68,6 +68,8 @@ NIRI_PKGS=(
   cups-pk-helper
   dsearch
   cups-pk-helper
+  brightnessctl
+  playerctl
 )
 
 FONTS=(
