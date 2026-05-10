@@ -39,6 +39,8 @@ ADDITIONAL_PKGS=(
   adb-enhanced
   asusctl
   libfprint-elanmoc2
+  fprintd
+  fprintd-pam
 )
 
 NIRI_PKGS=(
@@ -64,6 +66,7 @@ NIRI_PKGS=(
   cups-pk-helper
   brightnessctl
   playerctl
+  wl-mirror
 )
 
 FONTS=(
