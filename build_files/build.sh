@@ -31,7 +31,6 @@ dnf5 install -y --nogpgcheck \
 echo "priority=1" | tee -a /etc/yum.repos.d/_copr:copr.fedorainfracloud.org:yalter:niri-git.repo
 echo "priority=1" | tee -a /etc/yum.repos.d/_copr:copr.fedorainfracloud.org:ulysg:xwayland-satellite.repo
 echo "priority=2" | tee -a /etc/yum.repos.d/_copr:copr.fedorainfracloud.org:avengemedia:danklinux.repo
-dnf5 -y config-manager setopt "*danklinux*".exclude="ghostty"
 dnf5 -y config-manager setopt terra.enabled=1 "*terra*".priority=3
 
 ADDITIONAL_PKGS=(
@@ -39,6 +38,7 @@ ADDITIONAL_PKGS=(
   ntfs2btrfs
   adb-enhanced
   asusctl
+  libfprint-elanmoc2
 )
 
 NIRI_PKGS=(
@@ -59,12 +59,6 @@ NIRI_PKGS=(
   darkly
   foot
   foot-terminfo
-  ghostty
-  ghostty-kio
-  ghostty-terminfo
-  ghostty-zsh-completion
-  ghostty-vim
-  ghostty-shell-integration
   cups-pk-helper
   dsearch
   cups-pk-helper
@@ -77,41 +71,25 @@ FONTS=(
   papirus-icon-theme
 )
 
-FINGER_PRINT=(
-  fprintd
-  libfprint-elanmoc2
-  fprintd-pam
-)
-
 REMOVE_PKGS=(
   tmux
   kwrite
   kate
   Sunshine
-  kwaletmanager5
 )
 
 log "removing to reinstall"
-dnf5 remove -y libfprint
+dnf5 -y remove --no-autoremove libfprint
 
 log "Installing packages using dnf5..."
 dnf5 install --setopt=install_weak_deps=False -y \
   ${ADDITIONAL_PKGS[@]} \
   ${NIRI_PKGS[@]} \
-  ${FONTS[@]} \
-  ${FINGER_PRINT[@]}
+  ${FONTS[@]}
 
 log "Removing packages from dependcies"
 dnf5 remove -y \
   ${REMOVE_PKGS[@]}
-
-# log "Disable Copr repos to get rid of clutter..."
-# for i in /etc/yum.repos.d/terra*.repo; do
-#   sed -i 's/enabled=1/enabled=0/g' "$i"
-# done
-# for repo in "${COPR_REPOS[@]}"; do
-#   dnf5 -y copr disable "$repo"
-# done
 
 log "cleaning system"
 dnf5 clean all
