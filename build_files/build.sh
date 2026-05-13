@@ -41,6 +41,7 @@ ADDITIONAL_PKGS=(
   libfprint-elanmoc2
   fprintd
   fprintd-pam
+  btop
 )
 
 NIRI_PKGS=(
