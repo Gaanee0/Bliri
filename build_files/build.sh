@@ -36,7 +36,7 @@ dnf5 -y config-manager setopt terra.enabled=1 "*terra*".priority=3
 ADDITIONAL_PKGS=(
   dislocker
   ntfs2btrfs
-  adb-enhanced
+  #  adb-enhanced
   asusctl
   libfprint-elanmoc2
   fprintd
@@ -50,8 +50,8 @@ NIRI_PKGS=(
   xdg-desktop-portal-gnome
   quickshell-git
   matugen
-  cava
-  gammastep
+  # cava
+  # gammastep
   qt6ct
   qt5ct
   dms
@@ -62,14 +62,14 @@ NIRI_PKGS=(
   darkly
   foot
   foot-terminfo
-  cups-pk-helper
-  dsearch
-  brightnessctl
-  playerctl
-  wl-mirror
-  khal
-  greetd
-  dms-greeter
+  # cups-pk-helper
+  # dsearch
+  # brightnessctl
+  # playerctl
+  # wl-mirror
+  # khal
+  # greetd
+  # dms-greeter
 )
 
 FONTS=(
