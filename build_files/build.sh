@@ -64,10 +64,12 @@ NIRI_PKGS=(
   foot-terminfo
   cups-pk-helper
   dsearch
-  cups-pk-helper
   brightnessctl
   playerctl
   wl-mirror
+  khal
+  greetd
+  dms-greeter
 )
 
 FONTS=(
