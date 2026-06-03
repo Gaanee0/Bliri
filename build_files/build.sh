@@ -23,7 +23,6 @@ done
 log "Adding Terra repo..."
 curl -fsSL https://github.com/terrapkg/subatomic-repos/raw/main/terra.repo \
     -o /etc/yum.repos.d/terra.repo
-dnf5 install -y terra-release
 
 # Repo priorities (lower = higher priority)
 declare -A REPO_PRIORITIES=(
