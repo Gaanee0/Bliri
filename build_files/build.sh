@@ -26,7 +26,8 @@ done
 
 log "Adding repos & Optimizing build time..."
 dnf5 install -y --nogpgcheck \
-  --repofrompath 'terra,https://repos.fyralabs.com/terra$releasever' \
+  --repofrompath "terra,https://repos.fyralabs.com/terra$releasever" \
+  --repo terra \
   terra-release
 echo "priority=1" | tee -a /etc/yum.repos.d/_copr:copr.fedorainfracloud.org:yalter:niri-git.repo
 echo "priority=1" | tee -a /etc/yum.repos.d/_copr:copr.fedorainfracloud.org:ulysg:xwayland-satellite.repo
@@ -42,6 +43,13 @@ ADDITIONAL_PKGS=(
   fprintd
   fprintd-pam
   btop
+  ghostty
+  ghostty-terminfo
+  ghostty-shell-integration
+  ghostty-vim
+  ghostty-zsh-completion
+  ghostty-bash-completion
+  ghostty-fish-completion
 )
 
 NIRI_PKGS=(
