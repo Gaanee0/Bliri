@@ -1,109 +1,116 @@
 #!/bin/bash
-
 set ${SET_X:+-x} -euo pipefail
 
-trap '[[ $BASH_COMMAND != echo* ]] && [[ $BASH_COMMAND != log* ]] && echo "+ $BASH_COMMAND"' DEBUG
-
+# ── Helpers ────────────────────────────────────────────────────────────────────
+log() { echo "=== $* ==="; }
 RELEASE="$(rpm -E %fedora)"
 
-log() {
-  echo "=== $* ==="
-}
-
-log "Enable COPR repos..."
+# ── COPR Repos ─────────────────────────────────────────────────────────────────
+log "Enabling COPR repos..."
 COPR_REPOS=(
-  yalter/niri-git
-  ulysg/xwayland-satellite
-  avengemedia/danklinux
-  avengemedia/dms-git
-  gaanee/libfprint-elanmoc2
-  deltacopy/darkly
+    yalter/niri-git
+    ulysg/xwayland-satellite
+    avengemedia/danklinux
+    avengemedia/dms-git
+    gaanee/libfprint-elanmoc2
+    deltacopy/darkly
 )
-
 for repo in "${COPR_REPOS[@]}"; do
-  dnf5 -y copr enable "$repo"
+    dnf5 -y copr enable "$repo"
 done
 
-log "Adding repos & Optimizing build time..."
+# ── Terra Repo ─────────────────────────────────────────────────────────────────
+log "Adding Terra repo..."
 dnf5 install -y --nogpgcheck \
-  --repofrompath "terra,https://repos.fyralabs.com/terra${RELEASE}" \
-  --repo terra \
-  terra-release
-echo "priority=1" | tee -a /etc/yum.repos.d/_copr:copr.fedorainfracloud.org:yalter:niri-git.repo
-echo "priority=1" | tee -a /etc/yum.repos.d/_copr:copr.fedorainfracloud.org:ulysg:xwayland-satellite.repo
-echo "priority=2" | tee -a /etc/yum.repos.d/_copr:copr.fedorainfracloud.org:avengemedia:danklinux.repo
+    --repofrompath "terra,https://repos.fyralabs.com/terra${RELEASE}" \
+    --repo terra \
+    terra-release
+
+# Repo priorities (lower = higher priority)
+declare -A REPO_PRIORITIES=(
+    ["_copr:copr.fedorainfracloud.org:yalter:niri-git.repo"]=1
+    ["_copr:copr.fedorainfracloud.org:ulysg:xwayland-satellite.repo"]=1
+    ["_copr:copr.fedorainfracloud.org:avengemedia:danklinux.repo"]=2
+)
+for repo file in "${!REPO_PRIORITIES[@]}"; do
+    echo "priority=${REPO_PRIORITIES[$repo_file]}" >> "/etc/yum.repos.d/$repo_file"
+done
 dnf5 -y config-manager setopt terra.enabled=1 "*terra*".priority=3
 
-ADDITIONAL_PKGS=(
-  dislocker
-  ntfs2btrfs
-  adb-enhanced
-  asusctl
-  libfprint-elanmoc2
-  fprintd
-  fprintd-pam
-  btop
-  ghostty
-  ghostty-terminfo
-  ghostty-shell-integration
-  ghostty-vim
-  ghostty-zsh-completion
-  ghostty-bash-completion
-  ghostty-fish-completion
-)
+# ── Packages ───────────────────────────────────────────────────────────────────
+PKGS=(
+    # Hardware
+    dislocker
+    ntfs2btrfs
+    adb-enhanced
+    asusctl
 
-NIRI_PKGS=(
-  niri
-  xwayland-satellite
-  xdg-desktop-portal-gnome
-  quickshell-git
-  matugen
-  cava
-  gammastep
-  qt6ct
-  qt5ct
-  dms
-  dgop
-  dms-cli
-  adw-gtk3-theme
-  nwg-look
-  darkly
-  foot
-  foot-terminfo
-  cups-pk-helper
-  dsearch
-  brightnessctl
-  playerctl
-  wl-mirror
-  khal
-  greetd
-  dms-greeter
-)
+    # Fingerprint
+    libfprint-elanmoc2
+    fprintd
+    fprintd-pam
 
-FONTS=(
-  material-symbols-fonts
-  papirus-icon-theme
+    # Niri desktop
+    niri
+    xwayland-satellite
+    xdg-desktop-portal-gnome
+    quickshell-git
+    matugen
+    cava
+    gammastep
+    qt6ct
+    qt5ct
+    dms
+    dgop
+    dms-cli
+    adw-gtk3-theme
+    nwg-look
+    darkly
+    greetd
+    dms-greeter
+
+    # Terminal
+    ghostty
+    ghostty-terminfo
+    ghostty-shell-integration
+    ghostty-vim
+    ghostty-zsh-completion
+    ghostty-bash-completion
+    ghostty-fish-completion
+    foot
+    foot-terminfo
+    btop
+
+    # Utilities
+    dsearch
+    brightnessctl
+    playerctl
+    wl-mirror
+    khal
+    cups-pk-helper
+
+    # Fonts & themes
+    material-symbols-fonts
+    papirus-icon-theme
 )
 
 REMOVE_PKGS=(
-  tmux
-  kwrite
-  kate
-  Sunshine
+    tmux
+    kwrite
+    kate
+    Sunshine
+    libfprint   # reinstalled as libfprint-elanmoc2
 )
 
-log "removing to reinstall"
+# ── Install ────────────────────────────────────────────────────────────────────
+log "Removing packages before reinstall..."
 dnf5 -y remove --no-autoremove libfprint
 
-log "Installing packages using dnf5..."
-dnf5 install --setopt=install_weak_deps=False -y \
-  ${ADDITIONAL_PKGS[@]} \
-  ${NIRI_PKGS[@]} \
-  ${FONTS[@]}
+log "Installing packages..."
+dnf5 install -y --setopt=install_weak_deps=False "${PKGS[@]}"
 
-log "Removing packages from dependcies"
-dnf5 remove -y \
-  ${REMOVE_PKGS[@]}
+log "Removing unwanted packages..."
+dnf5 remove -y "${REMOVE_PKGS[@]}"
 
-log "cleaning system"
+log "Cleaning up..."
 dnf5 clean all
