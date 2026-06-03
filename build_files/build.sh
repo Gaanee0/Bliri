@@ -26,7 +26,7 @@ done
 
 log "Adding repos & Optimizing build time..."
 dnf5 install -y --nogpgcheck \
-  --repofrompath "terra,https://repos.fyralabs.com/terra$releasever" \
+  --repofrompath "terra,https://repos.fyralabs.com/terra${RELEASE}" \
   --repo terra \
   terra-release
 echo "priority=1" | tee -a /etc/yum.repos.d/_copr:copr.fedorainfracloud.org:yalter:niri-git.repo
