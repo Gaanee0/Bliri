@@ -62,14 +62,14 @@ PKGS=(
   greetd
   dms-greeter
 
-  # Terminal
-  ghostty
-  ghostty-terminfo
-  ghostty-shell-integration
-  ghostty-vim
-  ghostty-zsh-completion
-  ghostty-bash-completion
-  ghostty-fish-completion
+  #   Terminal
+  #   ghostty
+  #   ghostty-terminfo
+  #   ghostty-shell-integration
+  #   ghostty-vim
+  #   ghostty-zsh-completion
+  #   ghostty-bash-completion
+  #   ghostty-fish-completion
   foot
   foot-terminfo
   btop
