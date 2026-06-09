@@ -31,7 +31,7 @@ echo "priority=1" >>/etc/yum.repos.d/_copr:copr.fedorainfracloud.org:ulysg:xwayl
 echo "priority=1" >>/etc/yum.repos.d/_copr:copr.fedorainfracloud.org:scottames:ghostty.repo
 echo "priority=2" >>/etc/yum.repos.d/_copr:copr.fedorainfracloud.org:avengemedia:danklinux.repo
 echo "priority=2" >>/etc/yum.repos.d/_copr:copr.fedorainfracloud.org:deltacopy:darkly.repo
-dnf5 -y config-manager setopt 'danklinux*.exclude=ghostty*'
+dnf5 -y config-manager setopt '*danklinux*.exclude=ghostty*'
 dnf5 -y config-manager setopt 'terra.enabled=1' 'terra*.priority=3' 'terra*.exclude=ghostty* matugen*'
 # ── Packages ───────────────────────────────────────────────────────────────────
 PKGS=(
