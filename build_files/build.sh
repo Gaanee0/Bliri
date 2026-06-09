@@ -62,6 +62,18 @@ PKGS=(
   greetd
   dms-greeter
 
+  # Terminal
+  ghostty
+  ghostty-terminfo
+  ghostty-shell-integration
+  ghostty-vim
+  ghostty-zsh-completion
+  ghostty-bash-completion
+  ghostty-fish-completion
+  foot
+  foot-terminfo
+  btop
+
   # Utilities
   dsearch
   brightnessctl
@@ -69,9 +81,6 @@ PKGS=(
   wl-mirror
   khal
   cups-pk-helper
-  foot
-  foot-terminfo
-  btop
 
   # Fonts & themes
   material-symbols-fonts
