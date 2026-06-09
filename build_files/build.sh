@@ -71,7 +71,7 @@ PKGS=(
   ghostty
   ghostty-terminfo
   ghostty-shell-integration
-  ghostty-vim
+  # ghostty-vim
   ghostty-zsh-completion
   ghostty-bash-completion
   ghostty-fish-completion
