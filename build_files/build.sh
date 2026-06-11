@@ -36,8 +36,8 @@ dnf5 -y config-manager setopt 'terra.enabled=1' 'terra*.priority=3' 'terra*.excl
 # ── Packages ───────────────────────────────────────────────────────────────────
 PKGS=(
   # Hardware
-  dislocker
-  ntfs2btrfs
+  #  dislocker
+  #  ntfs2btrfs
   adb-enhanced
   asusctl
 
@@ -64,16 +64,16 @@ PKGS=(
   darkly
   darkly-qt5
   darkly-qt6
-  greetd
-  dms-greeter
+  #  greetd
+  #  dms-greeter
 
   # Terminal
   ghostty
   ghostty-terminfo
   ghostty-shell-integration
-  # ghostty-vim
-  ghostty-zsh-completion
-  ghostty-bash-completion
+  #  ghostty-vim
+  #  ghostty-zsh-completion
+  #  ghostty-bash-completion
   ghostty-fish-completion
   foot
   foot-terminfo
