@@ -36,9 +36,9 @@ dnf5 -y config-manager setopt 'terra.enabled=1' 'terra*.priority=3' 'terra*.excl
 # ── Packages ───────────────────────────────────────────────────────────────────
 PKGS=(
   # Hardware
-  #  dislocker
-  #  ntfs2btrfs
-  adb-enhanced
+  # dislocker
+  # ntfs2btrfs
+  # adb-enhanced
   asusctl
 
   # Fingerprint
@@ -64,6 +64,13 @@ PKGS=(
   darkly
   darkly-qt5
   darkly-qt6
+  dsearch
+  brightnessctl
+  playerctl
+  btop
+  #  wl-mirror
+  #  khal
+  #  cups-pk-helper
   #  greetd
   #  dms-greeter
 
@@ -77,15 +84,6 @@ PKGS=(
   ghostty-fish-completion
   foot
   foot-terminfo
-  btop
-
-  # Utilities
-  dsearch
-  brightnessctl
-  playerctl
-  wl-mirror
-  khal
-  cups-pk-helper
 
   # Fonts & themes
   material-symbols-fonts
