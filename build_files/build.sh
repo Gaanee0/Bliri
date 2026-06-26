@@ -59,12 +59,12 @@ PKGS=(
   darkly
   darkly-qt5
   darkly-qt6
+  nwg-look
+  qt6ct
+  qt5ct
   # btop
   # brightnessctl
   # playerctl
-  # nwg-look
-  # qt6ct
-  # qt5ct
   # cava
   # gammastep
   # dsearch
