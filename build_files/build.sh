@@ -52,38 +52,38 @@ PKGS=(
   xdg-desktop-portal-gnome
   quickshell-git
   matugen
-  cava
-  gammastep
-  qt6ct
-  qt5ct
   dms
   dgop
   dms-cli
   adw-gtk3-theme
-  nwg-look
   darkly
   darkly-qt5
   darkly-qt6
-  dsearch
-  brightnessctl
-  playerctl
-  btop
-  #  wl-mirror
-  #  khal
-  #  cups-pk-helper
-  #  greetd
-  #  dms-greeter
+  # btop
+  # brightnessctl
+  # playerctl
+  # nwg-look
+  # qt6ct
+  # qt5ct
+  # cava
+  # gammastep
+  # dsearch
+  # wl-mirror
+  # khal
+  # cups-pk-helper
+  # greetd
+  # dms-greeter
 
   # Terminal
   ghostty
   ghostty-terminfo
   ghostty-shell-integration
-  #  ghostty-vim
-  #  ghostty-zsh-completion
-  #  ghostty-bash-completion
   ghostty-fish-completion
-  foot
-  foot-terminfo
+  # ghostty-vim
+  # ghostty-zsh-completion
+  # ghostty-bash-completion
+  # foot
+  # foot-terminfo
 
   # Fonts & themes
   material-symbols-fonts
