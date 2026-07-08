@@ -39,8 +39,8 @@ PKGS=(
   # dislocker
   # ntfs2btrfs
   # adb-enhanced
+  # tailscale
   asusctl
-  tailscale
 
   # Fingerprint
   libfprint-elanmoc2
