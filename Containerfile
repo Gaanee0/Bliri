@@ -3,7 +3,8 @@ COPY build_files /
 COPY system_files /system_files
 
 # FROM ghcr.io/ublue-os/aurora-dx-nvidia-open:latest AS bliri
-FROM ghcr.io/ublue-os/aurora-dx-nvidia-open:testing AS bliri
+# FROM ghcr.io/ublue-os/aurora-dx-nvidia-open:testing AS bliri
+FROM ghcr.io/ublue-os/aurora-nvidia-open:testing AS bliri
 
 RUN rm -rvf /opt && mkdir -p /opt
 

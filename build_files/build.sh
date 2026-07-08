@@ -40,6 +40,7 @@ PKGS=(
   # ntfs2btrfs
   # adb-enhanced
   asusctl
+  tailscale
 
   # Fingerprint
   libfprint-elanmoc2
