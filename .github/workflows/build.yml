@@ -4,8 +4,8 @@ on:
   pull_request:
     branches:
       - main
-  schedule:
-    - cron: '30 16 * * *'
+#   schedule:
+#     - cron: '30 16 * * *'
   push:
     branches:
       - main
