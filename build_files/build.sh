@@ -15,6 +15,7 @@ COPR_REPOS=(
   gaanee/libfprint-elanmoc2
   deltacopy/darkly
   scottames/ghostty
+  zeno/scrcpy
 )
 for repo in "${COPR_REPOS[@]}"; do
   dnf5 -y copr enable "$repo"
@@ -63,6 +64,7 @@ PKGS=(
   nwg-look
   qt6ct
   qt5ct
+  scrcpy
   # btop
   # brightnessctl
   # playerctl
