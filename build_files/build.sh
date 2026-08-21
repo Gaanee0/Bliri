@@ -93,12 +93,12 @@ PKGS=(
   papirus-icon-theme
 )
 
-REMOVE_PKGS=(
-  tmux
-  kwrite
-  kate
-  Sunshine
-)
+# REMOVE_PKGS=(
+#   tmux
+#   kwrite
+#   kate
+#   Sunshine
+# )
 
 # ── Install ────────────────────────────────────────────────────────────────────
 log "Removing packages before reinstall..."
@@ -107,8 +107,8 @@ dnf5 -y remove --no-autoremove libfprint
 log "Installing packages..."
 dnf5 install -y --setopt=install_weak_deps=False "${PKGS[@]}"
 
-log "Removing unwanted packages..."
-dnf5 remove -y "${REMOVE_PKGS[@]}"
+# log "Removing unwanted packages..."
+# dnf5 remove -y "${REMOVE_PKGS[@]}"
 
 log "Cleaning up..."
 dnf5 clean all
