@@ -37,9 +37,9 @@ dnf5 -y config-manager setopt 'terra.enabled=1' 'terra*.priority=3' 'terra*.excl
 # ── Packages ───────────────────────────────────────────────────────────────────
 PKGS=(
   # Hardware
-  # dislocker
+  dislocker
   # ntfs2btrfs
-  # adb-enhanced
+  adb-enhanced
   # tailscale
   asusctl
 
@@ -68,12 +68,12 @@ PKGS=(
   # btop
   # brightnessctl
   # playerctl
-  # cava
-  # gammastep
-  # dsearch
-  # wl-mirror
-  # khal
-  # cups-pk-helper
+  cava
+  gammastep
+  dsearch
+  wl-mirror
+  khal
+  cups-pk-helper
   # greetd
   # dms-greeter
 
