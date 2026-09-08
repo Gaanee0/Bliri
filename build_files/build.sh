@@ -42,6 +42,7 @@ PKGS=(
   adb-enhanced
   # tailscale
   asusctl
+  podman-compose
 
   # Fingerprint
   libfprint-elanmoc2
