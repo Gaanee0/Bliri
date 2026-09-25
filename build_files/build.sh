@@ -37,12 +37,12 @@ dnf5 -y config-manager setopt 'terra.enabled=1' 'terra*.priority=3' 'terra*.excl
 # ── Packages ───────────────────────────────────────────────────────────────────
 PKGS=(
   # Hardware
-  dislocker
-  # ntfs2btrfs
+  # dislocker
   adb-enhanced
-  # tailscale
   asusctl
   podman-compose
+  # tailscale
+  # ntfs2btrfs
 
   # Fingerprint
   libfprint-elanmoc2
@@ -66,9 +66,6 @@ PKGS=(
   qt6ct
   qt5ct
   scrcpy
-  # btop
-  # brightnessctl
-  # playerctl
   cava
   gammastep
   dsearch
@@ -77,12 +74,15 @@ PKGS=(
   cups-pk-helper
   # greetd
   # dms-greeter
+  # btop
+  # brightnessctl
+  # playerctl
 
   # Terminal
-  ghostty
-  ghostty-terminfo
-  ghostty-shell-integration
-  ghostty-fish-completion
+  # ghostty
+  # ghostty-terminfo
+  # ghostty-shell-integration
+  # ghostty-fish-completion
   # ghostty-vim
   # ghostty-zsh-completion
   # ghostty-bash-completion
