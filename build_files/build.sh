@@ -38,9 +38,9 @@ dnf5 -y config-manager setopt 'terra.enabled=1' 'terra*.priority=3' # 'terra*.ex
 PKGS=(
   # Hardware
   # dislocker
-  adb-enhanced
+  # adb-enhanced
   asusctl
-  podman-compose
+  # podman-compose
   # tailscale
   # ntfs2btrfs
 
