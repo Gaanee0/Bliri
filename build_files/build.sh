@@ -65,13 +65,13 @@ PKGS=(
   nwg-look
   qt6ct
   qt5ct
-  scrcpy
   cava
   gammastep
   dsearch
-  wl-mirror
-  khal
   cups-pk-helper
+  # scrcpy
+  # wl-mirror
+  # khal
   # greetd
   # dms-greeter
   # btop
