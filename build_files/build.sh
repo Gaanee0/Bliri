@@ -69,7 +69,7 @@ PKGS=(
   gammastep
   dsearch
   cups-pk-helper
-  dankcalendar-git
+  # dankcalendar-git
   # scrcpy
   # wl-mirror
   # khal
