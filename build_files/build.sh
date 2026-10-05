@@ -38,8 +38,8 @@ dnf5 -y config-manager setopt 'terra.enabled=1' 'terra*.priority=3' # 'terra*.ex
 PKGS=(
   # Hardware
   asusctl
+  adb-enhanced
   # dislocker
-  # adb-enhanced
   # podman-compose
   # tailscale
   # ntfs2btrfs
@@ -69,10 +69,10 @@ PKGS=(
   gammastep
   dsearch
   cups-pk-helper
+  scrcpy
+  khal
+  wl-mirror
   # dankcalendar-git
-  # scrcpy
-  # wl-mirror
-  # khal
   # greetd
   # dms-greeter
   # btop
