@@ -69,9 +69,9 @@ PKGS=(
   gammastep
   dsearch
   cups-pk-helper
-  scrcpy
-  khal
-  wl-mirror
+  # scrcpy
+  # khal
+  # wl-mirror
   # dankcalendar-git
   # greetd
   # dms-greeter
