@@ -74,7 +74,7 @@ PKGS=(
   wl-mirror
   dankcalendar-git
   greetd
-  dms-greeter
+  dms-greeter-git
   # btop
   # brightnessctl
   # playerctl
