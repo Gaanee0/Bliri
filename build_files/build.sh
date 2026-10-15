@@ -69,12 +69,12 @@ PKGS=(
   gammastep
   dsearch
   cups-pk-helper
-  # scrcpy
-  # khal
-  # wl-mirror
-  # dankcalendar-git
-  # greetd
-  # dms-greeter
+  scrcpy
+  khal
+  wl-mirror
+  dankcalendar-git
+  greetd
+  dms-greeter
   # btop
   # brightnessctl
   # playerctl
