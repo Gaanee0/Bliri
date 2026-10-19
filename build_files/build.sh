@@ -14,6 +14,7 @@ COPR_REPOS=(
   avengemedia/dms-git
   gaanee/libfprint-elanmoc2
   deltacopy/darkly
+  amaranth/homebrew
   # zeno/scrcpy
   # scottames/ghostty
 )
@@ -75,6 +76,7 @@ PKGS=(
   dankcalendar-git
   greetd
   dms-greeter-git
+  brew-proxy
   # btop
   # brightnessctl
   # playerctl
