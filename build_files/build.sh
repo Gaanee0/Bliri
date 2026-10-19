@@ -77,6 +77,7 @@ PKGS=(
   greetd
   dms-greeter-git
   brew-proxy
+  brew-proxy-selinux
   # btop
   # brightnessctl
   # playerctl
