@@ -12,6 +12,7 @@ COPR_REPOS=(
   ulysg/xwayland-satellite
   avengemedia/danklinux
   avengemedia/dms-git
+  duxlabs/dux
   gaanee/libfprint-elanmoc2
   deltacopy/darkly
   amaranth/homebrew
@@ -30,6 +31,7 @@ curl -fsSL https://github.com/terrapkg/subatomic-repos/raw/main/terra.repo \
 # Repo priorities (lower = higher priority)
 echo "priority=1" >>/etc/yum.repos.d/_copr:copr.fedorainfracloud.org:yalter:niri-git.repo
 echo "priority=1" >>/etc/yum.repos.d/_copr:copr.fedorainfracloud.org:ulysg:xwayland-satellite.repo
+echo "priority=1" >>/etc/yum.repos.d/_copr:copr.fedorainfracloud.org:duxlabs:dux.repo
 echo "priority=2" >>/etc/yum.repos.d/_copr:copr.fedorainfracloud.org:avengemedia:danklinux.repo
 echo "priority=2" >>/etc/yum.repos.d/_copr:copr.fedorainfracloud.org:deltacopy:darkly.repo
 # echo "priority=1" >>/etc/yum.repos.d/_copr:copr.fedorainfracloud.org:scottames:ghostty.repo
@@ -52,6 +54,7 @@ PKGS=(
 
   # Niri desktop
   niri
+  iio-niri
   xwayland-satellite
   xdg-desktop-portal-gnome
   quickshell-git
@@ -59,6 +62,8 @@ PKGS=(
   dms
   dgop
   dms-cli
+  ffmpegthumbnailer
+
   adw-gtk3-theme
   darkly
   darkly-qt5
@@ -69,6 +74,7 @@ PKGS=(
   cava
   gammastep
   dsearch
+  dux-files-git
   cups-pk-helper
   scrcpy
   khal
