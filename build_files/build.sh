@@ -31,12 +31,12 @@ curl -fsSL https://github.com/terrapkg/subatomic-repos/raw/main/terra.repo \
 # Repo priorities (lower = higher priority)
 echo "priority=1" >>/etc/yum.repos.d/_copr:copr.fedorainfracloud.org:yalter:niri-git.repo
 echo "priority=1" >>/etc/yum.repos.d/_copr:copr.fedorainfracloud.org:ulysg:xwayland-satellite.repo
-echo "priority=1" >>/etc/yum.repos.d/_copr:copr.fedorainfracloud.org:duxlabs:dux.repo
+echo "priority=1" >>/etc/yum.repos.d/_copr:copr.fedorainfracloud.org:deltacopy:darkly.repo
 echo "priority=2" >>/etc/yum.repos.d/_copr:copr.fedorainfracloud.org:avengemedia:danklinux.repo
-echo "priority=2" >>/etc/yum.repos.d/_copr:copr.fedorainfracloud.org:deltacopy:darkly.repo
+echo "priority=3" >>/etc/yum.repos.d/_copr:copr.fedorainfracloud.org:duxlabs:dux.repo
 # echo "priority=1" >>/etc/yum.repos.d/_copr:copr.fedorainfracloud.org:scottames:ghostty.repo
 # dnf5 -y config-manager setopt '*danklinux*.exclude=ghostty*'
-dnf5 -y config-manager setopt 'terra.enabled=1' 'terra*.priority=3' # 'terra*.exclude=ghostty matugen*'
+dnf5 -y config-manager setopt 'terra.enabled=1' 'terra*.priority=4' # 'terra*.exclude=ghostty matugen*'
 # ── Packages ───────────────────────────────────────────────────────────────────
 PKGS=(
   # Hardware
@@ -63,7 +63,6 @@ PKGS=(
   dgop
   dms-cli
   ffmpegthumbnailer
-
   adw-gtk3-theme
   darkly
   darkly-qt5
