@@ -10,14 +10,12 @@ log "Enabling COPR repos..."
 COPR_REPOS=(
   yalter/niri-git
   ulysg/xwayland-satellite
-  avengemedia/danklinux
+  avengemedia/dms-git
   gaanee/libfprint-elanmoc2
   deltacopy/darkly
   amaranth/homebrew
-  duxlabs/dux-git
-  # avengemedia/dms-git
-  # zeno/scrcpy
-  # scottames/ghostty
+  avengemedia/danklinux
+  # duxlabs/dux-git
 )
 
 for repo in "${COPR_REPOS[@]}"; do
@@ -34,9 +32,6 @@ echo "priority=1" >>/etc/yum.repos.d/_copr:copr.fedorainfracloud.org:yalter:niri
 echo "priority=1" >>/etc/yum.repos.d/_copr:copr.fedorainfracloud.org:ulysg:xwayland-satellite.repo
 echo "priority=1" >>/etc/yum.repos.d/_copr:copr.fedorainfracloud.org:deltacopy:darkly.repo
 echo "priority=2" >>/etc/yum.repos.d/_copr:copr.fedorainfracloud.org:avengemedia:danklinux.repo
-echo "priority=3" >>/etc/yum.repos.d/_copr:copr.fedorainfracloud.org:duxlabs:dux.repo
-# echo "priority=1" >>/etc/yum.repos.d/_copr:copr.fedorainfracloud.org:scottames:ghostty.repo
-# dnf5 -y config-manager setopt '*danklinux*.exclude=ghostty*'
 dnf5 -y config-manager setopt 'terra.enabled=1' 'terra*.priority=4' # 'terra*.exclude=ghostty matugen*'
 # ── Packages ───────────────────────────────────────────────────────────────────
 PKGS=(
