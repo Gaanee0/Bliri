@@ -12,10 +12,10 @@ COPR_REPOS=(
   ulysg/xwayland-satellite
   avengemedia/danklinux
   avengemedia/dms-git
-  duxlabs/dux
   gaanee/libfprint-elanmoc2
   deltacopy/darkly
   amaranth/homebrew
+  # duxlabs/dux
   # zeno/scrcpy
   # scottames/ghostty
 )
