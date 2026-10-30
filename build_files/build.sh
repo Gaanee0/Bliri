@@ -19,6 +19,9 @@ COPR_REPOS=(
   # zeno/scrcpy
   # scottames/ghostty
 )
+
+sudo dnf5 copr remove duxlabs/dux
+
 for repo in "${COPR_REPOS[@]}"; do
   dnf5 -y copr enable "$repo"
 done
