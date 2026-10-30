@@ -11,11 +11,11 @@ COPR_REPOS=(
   yalter/niri-git
   ulysg/xwayland-satellite
   avengemedia/danklinux
-  avengemedia/dms-git
   gaanee/libfprint-elanmoc2
   deltacopy/darkly
   amaranth/homebrew
-  # duxlabs/dux
+  duxlabs/dux-git
+  # avengemedia/dms-git
   # zeno/scrcpy
   # scottames/ghostty
 )
