@@ -10,11 +10,13 @@ log "Enabling COPR repos..."
 COPR_REPOS=(
   yalter/niri-git
   ulysg/xwayland-satellite
-  avengemedia/dms-git
   gaanee/libfprint-elanmoc2
   deltacopy/darkly
   amaranth/homebrew
-  avengemedia/danklinux
+  duxlabs/dms-git
+  duxlabs/dux-repo
+  # avengemedia/dms-git
+  # avengemedia/danklinux
   # duxlabs/dux-git
 )
 
@@ -31,8 +33,9 @@ curl -fsSL https://github.com/terrapkg/subatomic-repos/raw/main/terra.repo \
 echo "priority=1" >>/etc/yum.repos.d/_copr:copr.fedorainfracloud.org:yalter:niri-git.repo
 echo "priority=1" >>/etc/yum.repos.d/_copr:copr.fedorainfracloud.org:ulysg:xwayland-satellite.repo
 echo "priority=1" >>/etc/yum.repos.d/_copr:copr.fedorainfracloud.org:deltacopy:darkly.repo
-echo "priority=2" >>/etc/yum.repos.d/_copr:copr.fedorainfracloud.org:avengemedia:danklinux.repo
-dnf5 -y config-manager setopt 'terra.enabled=1' 'terra*.priority=4' # 'terra*.exclude=ghostty matugen*'
+echo "priority=2" >>/etc/yum.repos.d/_copr:copr.fedorainfracloud.org:duxlabs:dux-repo.repo
+dnf5 -y config-manager setopt 'terra.enabled=1' 'terra*.priority=4'
+
 # ── Packages ───────────────────────────────────────────────────────────────────
 PKGS=(
   # Hardware
