@@ -15,9 +15,6 @@ COPR_REPOS=(
   amaranth/homebrew
   duxlabs/dms-git
   duxlabs/dux-repo
-  # avengemedia/dms-git
-  # avengemedia/danklinux
-  # duxlabs/dux-git
 )
 
 for repo in "${COPR_REPOS[@]}"; do
@@ -59,8 +56,12 @@ PKGS=(
   quickshell-git
   matugen
   dms
-  dgop
   dms-cli
+  dux-gop
+  dux-search
+  dux-files-git
+  dux-calendar-git
+  dux-greeter-git
   ffmpegthumbnailer
   adw-gtk3-theme
   darkly
@@ -71,15 +72,11 @@ PKGS=(
   qt5ct
   cava
   gammastep
-  dsearch
-  dux-files-git
   cups-pk-helper
   scrcpy
   khal
   wl-mirror
-  dankcalendar-git
   greetd
-  dms-greeter-git
   brew-proxy
   brew-proxy-selinux
   # btop
