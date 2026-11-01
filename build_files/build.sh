@@ -3,7 +3,6 @@ set ${SET_X:+-x} -euo pipefail
 
 # Logs
 log() { echo "=== $* ==="; }
-# RELEASE="$(rpm -E %fedora)"
 
 # ── COPR Repos ─────────────────────────────────────────────────────────────────
 log "Enabling COPR repos..."
