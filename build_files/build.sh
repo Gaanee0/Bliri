@@ -38,25 +38,21 @@ PKGS=(
   # Hardware
   asusctl
   adb-enhanced
-  # dislocker
-  # podman-compose
-  # tailscale
-  # ntfs2btrfs
-
-  # Fingerprint
   libfprint-elanmoc2
   fprintd
   fprintd-pam
 
-  # Niri desktop
+  # Niri WM
   niri
   iio-niri
   xwayland-satellite
   xdg-desktop-portal-gnome
-  quickshell-git
-  matugen
+
+  # Dux Desktop
   dms
   dms-cli
+  quickshell-git
+  matugen
   dux-gop
   dux-search
   dux-files-git
@@ -73,38 +69,19 @@ PKGS=(
   cava
   gammastep
   cups-pk-helper
-  scrcpy
   khal
   wl-mirror
   greetd
+
+  # Addons
+  scrcpy
   brew-proxy
   brew-proxy-selinux
-  # btop
-  # brightnessctl
-  # playerctl
-
-  # Terminal
-  # ghostty
-  # ghostty-terminfo
-  # ghostty-shell-integration
-  # ghostty-fish-completion
-  # ghostty-vim
-  # ghostty-zsh-completion
-  # ghostty-bash-completion
-  # foot
-  # foot-terminfo
 
   # Fonts & themes
   material-symbols-fonts
   papirus-icon-theme
 )
-
-# REMOVE_PKGS=(
-#   tmux
-#   kwrite
-#   kate
-#   Sunshine
-# )
 
 # ── Install ────────────────────────────────────────────────────────────────────
 log "Removing packages before reinstall..."
@@ -112,9 +89,6 @@ dnf5 -y remove --no-autoremove libfprint
 
 log "Installing packages..."
 dnf5 install -y --setopt=install_weak_deps=False "${PKGS[@]}"
-
-# log "Removing unwanted packages..."
-# dnf5 remove -y "${REMOVE_PKGS[@]}"
 
 log "Cleaning up..."
 dnf5 clean all
