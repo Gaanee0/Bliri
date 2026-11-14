@@ -7,13 +7,15 @@ log() { echo "=== $* ==="; }
 # ── COPR Repos ─────────────────────────────────────────────────────────────────
 log "Enabling COPR repos..."
 COPR_REPOS=(
-  yalter/niri-git
+  # yalter/niri-git
+  # duxlabs/dms-git
+  yalter/niri
+  duxlabs/dms
+  duxlabs/dux-repo
   ulysg/xwayland-satellite
   gaanee/libfprint-elanmoc2
   deltacopy/darkly
   amaranth/homebrew
-  duxlabs/dms-git
-  duxlabs/dux-repo
 )
 
 for repo in "${COPR_REPOS[@]}"; do
@@ -26,7 +28,8 @@ curl -fsSL https://github.com/terrapkg/subatomic-repos/raw/main/terra.repo \
   -o /etc/yum.repos.d/terra.repo
 
 # Repo priorities (lower = higher priority)
-echo "priority=1" >>/etc/yum.repos.d/_copr:copr.fedorainfracloud.org:yalter:niri-git.repo
+# echo "priority=1" >>/etc/yum.repos.d/_copr:copr.fedorainfracloud.org:yalter:niri-git.repo
+echo "priority=1" >>/etc/yum.repos.d/_copr:copr.fedorainfracloud.org:yalter:niri.repo
 echo "priority=1" >>/etc/yum.repos.d/_copr:copr.fedorainfracloud.org:ulysg:xwayland-satellite.repo
 echo "priority=1" >>/etc/yum.repos.d/_copr:copr.fedorainfracloud.org:deltacopy:darkly.repo
 echo "priority=1" >>/etc/yum.repos.d/_copr:copr.fedorainfracloud.org:duxlabs:dux-repo.repo
