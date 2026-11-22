@@ -53,14 +53,15 @@ PKGS=(
   # Dux Desktop
   dms
   dms-cli
-  quickshell
   dux-qt-base
-  matugen
   dux-gop
+  dux-icons
   dux-search
   dux-files
   dux-calendar
   dux-greeter
+  matugen
+  quickshell
   ffmpegthumbnailer
   adw-gtk3-theme
   darkly
