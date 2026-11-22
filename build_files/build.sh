@@ -54,6 +54,7 @@ PKGS=(
   dms
   dms-cli
   quickshell
+  dux-qt-base
   matugen
   dux-gop
   dux-search
